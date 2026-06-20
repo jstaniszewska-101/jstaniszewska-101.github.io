@@ -1,0 +1,556 @@
+/* ============================================
+   JOANNA STANISZEWSKA — Personal Website
+   Palette: Dusty Rose + Warm White
+   Typography: Cormorant Garamond + Inter
+   ============================================ */
+
+:root {
+  --bg:           #FAF8F6;
+  --bg-alt:       #F3EEEC;
+  --rose:         #BE8B85;
+  --rose-light:   #EDD9D6;
+  --rose-deep:    #9E6B65;
+  --text:         #1E1C1B;
+  --text-muted:   #7A7368;
+  --text-light:   #B5AEA9;
+  --border:       #E8DFDC;
+  --max-w:        760px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ——— Navigation ——— */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 248, 246, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.25rem;
+}
+
+.nav-links a {
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--rose);
+}
+
+/* ——— Hero ——— */
+
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 5.5rem 2rem 6.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-photo,
+.hero-photo-placeholder {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  margin-bottom: 2.75rem;
+  border: 4px solid var(--rose-light);
+  box-shadow: 0 6px 32px rgba(190, 139, 133, 0.18);
+}
+
+.hero-photo {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-photo-placeholder {
+  background: var(--rose-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo-placeholder span {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  opacity: 0.75;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.tagline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  max-width: 430px;
+  margin-bottom: 2rem;
+  line-height: 1.65;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2.75rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  background: var(--rose-light);
+  padding: 0.32rem 1rem;
+  border-radius: 100px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ——— Buttons ——— */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--rose);
+  color: #fff;
+  border: 2px solid var(--rose);
+}
+
+.btn-primary:hover {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--rose);
+  border: 2px solid var(--rose-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--rose);
+  background: var(--rose-light);
+}
+
+/* ——— Sections ——— */
+
+.section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-wide {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4.5rem 2rem;
+}
+
+.section-wide-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.section-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 2.25rem;
+}
+
+/* ——— About ——— */
+
+.about-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 640px;
+}
+
+.about-text + .about-text {
+  margin-top: 1.5rem;
+}
+
+.about-text strong {
+  font-weight: 500;
+  color: var(--rose-deep);
+}
+
+/* ——— Roles / Work ——— */
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.role-card {
+  background: var(--bg);
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--rose-light);
+  transition: border-top-color 0.2s ease;
+}
+
+.role-card:hover {
+  border-top-color: var(--rose);
+}
+
+.role-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.role-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ——— Book ——— */
+
+.book-inner {
+  display: grid;
+  grid-template-columns: 152px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.book-cover-placeholder,
+.book-cover-img {
+  width: 152px;
+  height: 224px;
+}
+
+.book-cover-placeholder {
+  background: linear-gradient(160deg, var(--rose-light) 0%, #dfc4c1 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover-img {
+  object-fit: cover;
+  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.14);
+}
+
+.book-cover-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--rose-deep);
+}
+
+.book-cover-author {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  text-align: center;
+  opacity: 0.75;
+}
+
+.badge-pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  background: var(--rose-light);
+  padding: 0.32rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+.book-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.book-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.book-desc {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.78;
+  margin-bottom: 2rem;
+  max-width: 460px;
+}
+
+/* ——— Credentials ——— */
+
+.cred-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cred-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cred-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.cred-org {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.cred-name {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .cred-item {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .cred-org {
+    min-width: unset;
+  }
+}
+
+/* ——— Contact ——— */
+
+.contact-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.1rem 0;
+  text-decoration: none;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease;
+}
+
+.contact-link:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.contact-link:hover .contact-link-value {
+  color: var(--rose);
+}
+
+.contact-link-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.contact-link-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+/* ——— Footer ——— */
+
+footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.footer-copy {
+  font-size: 0.76rem;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+
+/* ——— Responsive ——— */
+
+@media (max-width: 640px) {
+  nav {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    padding: 3.5rem 1.5rem 4.5rem;
+  }
+
+  .hero-photo,
+  .hero-photo-placeholder {
+    width: 152px;
+    height: 152px;
+  }
+
+  .section,
+  .section-wide {
+    padding: 3rem 1.5rem;
+  }
+
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .book-cover-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+}
