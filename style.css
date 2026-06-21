@@ -1,20 +1,22 @@
 /* ============================================
    JOANNA STANISZEWSKA — Personal Website
-   Palette: Dusty Rose + Warm White
+   Palette: Book Colors — Linen · Salmon · Steel Blue · Navy
    Typography: Cormorant Garamond + Inter
    ============================================ */
 
 :root {
-  --bg:           #FAF8F6;
-  --bg-alt:       #F3EEEC;
-  --rose:         #BE8B85;
-  --rose-light:   #EDD9D6;
-  --rose-deep:    #9E6B65;
-  --text:         #1E1C1B;
-  --text-muted:   #7A7368;
-  --text-light:   #B5AEA9;
-  --border:       #E8DFDC;
+  --bg:           #F4EFE8;
+  --bg-alt:       #EDE7DF;
+  --salmon:       #D4896A;
+  --salmon-light: #EDD5C8;
+  --salmon-deep:  #B56A50;
+  --blue:         #5A8FA3;
+  --text:         #1C3A4A;
+  --text-muted:   #6A7E88;
+  --text-light:   #A8BAC2;
+  --border:       #DDD5CC;
   --max-w:        760px;
+  --radius:       4px;
 }
 
 * {
@@ -43,7 +45,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 248, 246, 0.94);
+  background: rgba(244, 239, 232, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -79,7 +81,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: var(--rose);
+  color: var(--salmon);
 }
 
 /* ——— Hero ——— */
@@ -94,34 +96,15 @@ nav {
   align-items: center;
 }
 
-.hero-photo,
-.hero-photo-placeholder {
+.hero-photo {
   width: 192px;
   height: 192px;
   border-radius: 50%;
   margin-bottom: 2.75rem;
-  border: 4px solid var(--rose-light);
-  box-shadow: 0 6px 32px rgba(190, 139, 133, 0.18);
-}
-
-.hero-photo {
   object-fit: cover;
   object-position: center top;
-}
-
-.hero-photo-placeholder {
-  background: var(--rose-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-photo-placeholder span {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-  opacity: 0.75;
+  border: 3px solid var(--salmon-light);
+  box-shadow: 0 6px 32px rgba(212, 137, 106, 0.15);
 }
 
 h1 {
@@ -141,27 +124,17 @@ h1 {
   font-style: italic;
   color: var(--text-muted);
   max-width: 430px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   line-height: 1.65;
 }
 
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  margin-bottom: 2.75rem;
-}
-
-.badge {
-  font-size: 0.7rem;
+.hero-location {
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--rose-deep);
-  background: var(--rose-light);
-  padding: 0.32rem 1rem;
-  border-radius: 100px;
+  color: var(--blue);
+  margin-bottom: 2.75rem;
 }
 
 .hero-cta {
@@ -182,31 +155,31 @@ h1 {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: var(--radius);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--rose);
+  background: var(--salmon);
   color: #fff;
-  border: 2px solid var(--rose);
+  border: 2px solid var(--salmon);
 }
 
 .btn-primary:hover {
-  background: var(--rose-deep);
-  border-color: var(--rose-deep);
+  background: var(--salmon-deep);
+  border-color: var(--salmon-deep);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--rose);
-  border: 2px solid var(--rose-light);
+  color: var(--salmon);
+  border: 2px solid var(--salmon-light);
 }
 
 .btn-outline:hover {
-  border-color: var(--rose);
-  background: var(--rose-light);
+  border-color: var(--salmon);
+  background: var(--salmon-light);
 }
 
 /* ——— Sections ——— */
@@ -236,7 +209,7 @@ h1 {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--salmon);
   margin-bottom: 2.25rem;
 }
 
@@ -255,16 +228,11 @@ h1 {
   margin-top: 1.5rem;
 }
 
-.about-text strong {
-  font-weight: 500;
-  color: var(--rose-deep);
-}
-
 /* ——— Roles / Work ——— */
 
 .roles-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.25rem;
 }
 
@@ -272,12 +240,13 @@ h1 {
   background: var(--bg);
   padding: 1.75rem;
   border: 1px solid var(--border);
-  border-top: 3px solid var(--rose-light);
+  border-top: 3px solid var(--salmon-light);
+  border-radius: 0 0 var(--radius) var(--radius);
   transition: border-top-color 0.2s ease;
 }
 
 .role-card:hover {
-  border-top-color: var(--rose);
+  border-top-color: var(--salmon);
 }
 
 .role-title {
@@ -303,56 +272,12 @@ h1 {
   align-items: start;
 }
 
-.book-cover-placeholder,
 .book-cover-img {
   width: 152px;
   height: 224px;
-}
-
-.book-cover-placeholder {
-  background: linear-gradient(160deg, var(--rose-light) 0%, #dfc4c1 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
-  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.1);
-}
-
-.book-cover-img {
   object-fit: cover;
-  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.14);
-}
-
-.book-cover-text {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.78rem;
-  font-style: italic;
-  line-height: 1.55;
-  text-align: center;
-  color: var(--rose-deep);
-}
-
-.book-cover-author {
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-  text-align: center;
-  opacity: 0.75;
-}
-
-.badge-pill {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-  background: var(--rose-light);
-  padding: 0.32rem 1rem;
-  border-radius: 100px;
-  margin-bottom: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: 5px 5px 28px rgba(28, 58, 74, 0.14);
 }
 
 .book-title {
@@ -368,7 +293,7 @@ h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1rem;
   font-style: italic;
-  color: var(--rose);
+  color: var(--blue);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
@@ -406,7 +331,7 @@ h1 {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--blue);
   min-width: 160px;
   flex-shrink: 0;
 }
@@ -460,7 +385,7 @@ h1 {
 }
 
 .contact-link:hover .contact-link-value {
-  color: var(--rose);
+  color: var(--salmon);
 }
 
 .contact-link-label {
@@ -468,7 +393,7 @@ h1 {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--salmon);
   min-width: 72px;
   flex-shrink: 0;
 }
@@ -522,8 +447,7 @@ footer {
     padding: 3.5rem 1.5rem 4.5rem;
   }
 
-  .hero-photo,
-  .hero-photo-placeholder {
+  .hero-photo {
     width: 152px;
     height: 152px;
   }
