@@ -433,8 +433,13 @@ h1 {
 .offers-block--night {
   padding: 2.5rem;
   background: var(--bg-night);
+  background-image: url('Joanna_petals.jpeg');
+  background-size: cover;
+  background-position: center 40%;
+  background-blend-mode: overlay;
   border-radius: 6px;
   margin-bottom: 0;
+  position: relative;
 }
 
 .offers-subtitle {
