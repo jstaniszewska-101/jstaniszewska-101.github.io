@@ -109,39 +109,69 @@ nav {
 /* ——— Hero ——— */
 
 .hero {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 5.5rem 2rem 6rem;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /* Parallax background */
+  background-image: url('hero_bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  /* Cream overlay so text is legible */
+  padding: 0;
+}
+
+/* Overlay gradient — warm cream from top, transparent at bottom */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(250,248,246,0.88) 0%,
+    rgba(250,248,246,0.78) 50%,
+    rgba(250,248,246,0.65) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero > * { position: relative; z-index: 2; }
+
+/* Inner centering wrapper */
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 5.5rem 2rem 6rem;
+  max-width: 100%;
 }
 
-/* Two side-by-side portraits in hero */
-.hero-photos {
-  display: flex;
-  gap: 1.25rem;
-  justify-content: center;
-  margin-bottom: 2.75rem;
+/* Fix: re-scope inner content width */
+.hero h1,
+.hero .tagline,
+.hero .tagline-inner,
+.hero .hero-badges,
+.hero .hero-cta,
+.hero .hero-welcome {
+  max-width: var(--max-w);
 }
 
-.hero-photo {
-  width: 140px;
-  height: 140px;
+/* Central identity headshot */
+.hero-center-photo-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.hero-center-photo {
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-}
-
-.hero-photo--day {
-  border: 3px solid var(--rose-light);
-  box-shadow: 0 4px 24px rgba(190, 139, 133, 0.2);
-}
-
-.hero-photo--night {
-  border: 3px solid rgba(197, 184, 232, 0.5);
-  box-shadow: 0 4px 24px rgba(30, 26, 56, 0.2);
+  border: 4px solid var(--rose-light);
+  box-shadow:
+    0 0 0 8px rgba(190,139,133,0.12),
+    0 8px 32px rgba(190, 139, 133, 0.25);
 }
 
 h1 {
@@ -326,6 +356,58 @@ h1 {
 
 .inline-link:hover { color: var(--rose); }
 
+/* ——— About wide atmospheric photo ——— */
+
+.about-wide-photo {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 2.5rem;
+}
+
+.about-wide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.about-wide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(250,248,246,0.15) 0%,
+    rgba(250,248,246,0.55) 100%
+  );
+}
+
+/* ——— Role card photo thumbnails ——— */
+
+.role-card {
+  overflow: hidden; /* clip the photo thumbnail */
+}
+
+.card-photo {
+  margin: -1.75rem -1.75rem 1.25rem -1.75rem;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.4s ease;
+}
+
+.role-card:hover .card-photo {
+  transform: scale(1.04);
+}
+
+.card-photo--night {
+  border-bottom: 1px solid var(--border-night);
+  filter: saturate(0.7) brightness(0.75);
+}
+
 /* ——— Fork / Merge SVG visuals ——— */
 
 .fork-visual,
@@ -432,14 +514,28 @@ h1 {
 
 .offers-block--night {
   padding: 2.5rem;
-  background: var(--bg-night);
-  background-image: url('Joanna_petals.jpeg');
+  background-color: var(--bg-night);
+  background-image: url('night_bg.jpg');
   background-size: cover;
   background-position: center 40%;
-  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
   border-radius: 6px;
   margin-bottom: 0;
   position: relative;
+}
+
+/* Second layer: petals as ::before overlay */
+.offers-block--night::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('Joanna_petals.jpeg');
+  background-size: cover;
+  background-position: center 40%;
+  opacity: 0.12;
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .offers-subtitle {
@@ -502,6 +598,29 @@ h1 {
 
 .role-desc--night {
   color: var(--text-night-muted);
+}
+
+/* ——— Being in Systems section — atmospheric background ——— */
+
+#being {
+  position: relative;
+  overflow: hidden;
+}
+
+#being::before {
+  content: '';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  background-image: url('being_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.18;
+  pointer-events: none;
 }
 
 /* ——— Credentials ——— */
@@ -731,6 +850,15 @@ footer {
 
 /* ——— Responsive ——— */
 
+/* ——— Mobile parallax fallback ——— */
+/* background-attachment: fixed is broken on iOS Safari */
+@media (max-width: 768px) {
+  .hero,
+  .offers-block--night {
+    background-attachment: scroll;
+  }
+}
+
 @media (max-width: 680px) {
 
   nav {
@@ -749,9 +877,13 @@ footer {
     padding: 3.5rem 1.5rem 4.5rem;
   }
 
-  .hero-photo {
-    width: 110px;
-    height: 110px;
+  .hero-center-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .about-wide-photo {
+    height: 150px;
   }
 
   .section,
