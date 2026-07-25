@@ -1,23 +1,50 @@
 /* ============================================
    JOANNA STANISZEWSKA — Personal Website
-   Palette: Dusty Rose + Warm White
-   Typography: Cormorant Garamond + Inter
+   Two paths: Day (outer) · Night (inner)
+
+   Typography — two families, three sizes:
+   • Cormorant Garamond  — headings, prose (serif)
+   • Inter               — labels, navigation, captions (sans-serif)
+
+   Palette — Day:
+   • Dusty Rose  #BE8B85 · rose-light #EDD9D6 · rose-deep #9E6B65
+   Palette — Night:
+   • Deep indigo #1e1a38 · soft lavender #c5b8e8 · gold #d4af7a
    ============================================ */
 
 :root {
-  --bg:           #FAF8F6;
-  --bg-alt:       #F3EEEC;
-  --rose:         #BE8B85;
-  --rose-light:   #EDD9D6;
-  --rose-deep:    #9E6B65;
-  --text:         #1E1C1B;
-  --text-muted:   #7A7368;
-  --text-light:   #B5AEA9;
+  /* Layout */
+  --max-w: 760px;
+
+  /* Backgrounds */
+  --bg:       #FAF8F6;
+  --bg-alt:   #F3EEEC;
+  --bg-night: #1e1a38;
+
+  /* Day palette */
+  --rose:       #BE8B85;
+  --rose-light: #EDD9D6;
+  --rose-deep:  #9E6B65;
+
+  /* Night palette */
+  --night-mid:  #2a2550;
+  --star:       #c5b8e8;
+  --gold:       #d4af7a;
+
+  /* Text */
+  --text:       #1E1C1B;
+  --text-muted: #7A7368;
+  --text-light: #B5AEA9;
+  --text-night: #e8e2f8;
+  --text-night-muted: #a396c8;
+
+  /* Borders */
   --border:       #E8DFDC;
-  --max-w:        760px;
+  --border-night: rgba(197, 184, 232, 0.18);
 }
 
-* {
+/* ——— Reset ——— */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,12 +56,11 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ——— Navigation ——— */
@@ -78,50 +104,44 @@ nav {
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: var(--rose);
-}
+.nav-links a:hover { color: var(--rose); }
 
 /* ——— Hero ——— */
 
 .hero {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 5.5rem 2rem 6.5rem;
+  padding: 5.5rem 2rem 6rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.hero-photo,
-.hero-photo-placeholder {
-  width: 192px;
-  height: 192px;
-  border-radius: 50%;
+/* Two side-by-side portraits in hero */
+.hero-photos {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
   margin-bottom: 2.75rem;
-  border: 4px solid var(--rose-light);
-  box-shadow: 0 6px 32px rgba(190, 139, 133, 0.18);
 }
 
 .hero-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center top;
 }
 
-.hero-photo-placeholder {
-  background: var(--rose-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-photo--day {
+  border: 3px solid var(--rose-light);
+  box-shadow: 0 4px 24px rgba(190, 139, 133, 0.2);
 }
 
-.hero-photo-placeholder span {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-  opacity: 0.75;
+.hero-photo--night {
+  border: 3px solid rgba(197, 184, 232, 0.5);
+  box-shadow: 0 4px 24px rgba(30, 26, 56, 0.2);
 }
 
 h1 {
@@ -136,11 +156,23 @@ h1 {
 
 .tagline {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.05rem, 2.3vw, 1.25rem);
   font-weight: 300;
   font-style: italic;
   color: var(--text-muted);
-  max-width: 430px;
+  max-width: 460px;
+  margin-bottom: 0.6rem;
+  line-height: 1.65;
+}
+
+.tagline-inner {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--rose-deep);
+  opacity: 0.75;
+  max-width: 420px;
   margin-bottom: 2rem;
   line-height: 1.65;
 }
@@ -150,18 +182,32 @@ h1 {
   flex-wrap: wrap;
   gap: 0.6rem;
   justify-content: center;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .badge {
   font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.13em;
+  font-weight: 400;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
+  padding: 0.32rem 0.9rem;
+  border-radius: 100px;
+}
+
+.badge--day {
   color: var(--rose-deep);
   background: var(--rose-light);
-  padding: 0.32rem 1rem;
-  border-radius: 100px;
+}
+
+.badge--night {
+  color: var(--star);
+  background: rgba(30, 26, 56, 0.12);
+  border: 1px solid rgba(197, 184, 232, 0.3);
+}
+
+.badge:not(.badge--day):not(.badge--night) {
+  color: var(--text-muted);
+  background: var(--bg-alt);
 }
 
 .hero-cta {
@@ -169,6 +215,15 @@ h1 {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hero-welcome {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
 }
 
 /* ——— Buttons ——— */
@@ -178,7 +233,7 @@ h1 {
   padding: 0.8rem 2rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.76rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
@@ -209,7 +264,7 @@ h1 {
   background: var(--rose-light);
 }
 
-/* ——— Sections ——— */
+/* ——— Section base ——— */
 
 .section {
   max-width: var(--max-w);
@@ -219,7 +274,6 @@ h1 {
 }
 
 .section-wide {
-  background: var(--bg-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 4.5rem 2rem;
@@ -237,22 +291,21 @@ h1 {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--rose);
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
-/* ——— About ——— */
+/* ——— About prose ——— */
 
 .about-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.1rem, 2.4vw, 1.3rem);
   font-weight: 300;
   line-height: 1.9;
   color: var(--text);
-  max-width: 640px;
 }
 
 .about-text + .about-text {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .about-text strong {
@@ -260,39 +313,251 @@ h1 {
   color: var(--rose-deep);
 }
 
-/* ——— Roles / Work ——— */
+.about-text em {
+  color: var(--text-muted);
+}
+
+.inline-link {
+  color: var(--rose-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.inline-link:hover { color: var(--rose); }
+
+/* ——— Fork / Merge SVG visuals ——— */
+
+.fork-visual,
+.merge-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto 0;
+}
+
+.fork-visual svg,
+.merge-visual svg {
+  width: 200px;
+  height: 90px;
+}
+
+.fork-label {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin-top: 0.5rem;
+}
+
+.fork-label--day {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.fork-label--night {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7b6fa0;
+}
+
+.merge-visual {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.merge-caption {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ——— Two Paths grid (About) ——— */
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 2.5rem 0;
+}
+
+.path {
+  display: flex;
+  flex-direction: column;
+}
+
+.path-photo-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.path-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.path--day .path-photo {
+  border: 2px solid var(--rose-light);
+}
+
+.path--night .path-photo {
+  border: 2px solid rgba(197, 184, 232, 0.4);
+  filter: saturate(0.8) brightness(0.95);
+}
+
+.path-label-small {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.path--day .path-label-small { color: var(--rose); }
+.path--night .path-label-small { color: #7b6fa0; }
+
+/* ——— Invitation / Work section ——— */
+
+.offers-block {
+  margin-bottom: 3rem;
+}
+
+.offers-block--night {
+  padding: 2.5rem;
+  background: var(--bg-night);
+  border-radius: 6px;
+  margin-bottom: 0;
+}
+
+.offers-subtitle {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+}
+
+.offers-subtitle--night {
+  color: var(--star);
+  opacity: 0.8;
+}
 
 .roles-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
 .role-card {
-  background: var(--bg);
   padding: 1.75rem;
   border: 1px solid var(--border);
   border-top: 3px solid var(--rose-light);
+  background: var(--bg);
   transition: border-top-color 0.2s ease;
 }
 
-.role-card:hover {
-  border-top-color: var(--rose);
+.role-card:hover { border-top-color: var(--rose); }
+
+.role-card--night {
+  background: var(--night-mid);
+  border: 1px solid var(--border-night);
+  border-top: 3px solid rgba(197, 184, 232, 0.3);
+}
+
+.role-card--night:hover {
+  border-top-color: var(--star);
 }
 
 .role-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 0.7rem;
   color: var(--text);
 }
 
+.role-title--night {
+  color: var(--text-night);
+}
+
 .role-desc {
   font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.72;
 }
+
+.role-desc--night {
+  color: var(--text-night-muted);
+}
+
+/* ——— Credentials ——— */
+
+.cred-path-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.cred-path-label:first-of-type { margin-top: 0; }
+.cred-path-label { color: var(--rose); }
+.cred-path-label--night { color: #7b6fa0; }
+
+.cred-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.cred-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cred-item:first-child { border-top: 1px solid var(--border); }
+
+.cred-item--night {
+  border-bottom: 1px solid rgba(197, 184, 232, 0.12);
+}
+
+.cred-item--night:first-child {
+  border-top: 1px solid rgba(197, 184, 232, 0.12);
+}
+
+.cred-org {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--rose);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.cred-org--night { color: #7b6fa0; }
+
+.cred-name {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.cred-name--night { color: var(--text-muted); }
 
 /* ——— Book ——— */
 
@@ -303,49 +568,17 @@ h1 {
   align-items: start;
 }
 
-.book-cover-placeholder,
 .book-cover-img {
   width: 152px;
   height: 224px;
-}
-
-.book-cover-placeholder {
-  background: linear-gradient(160deg, var(--rose-light) 0%, #dfc4c1 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
-  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.1);
-}
-
-.book-cover-img {
   object-fit: cover;
   box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.14);
-}
-
-.book-cover-text {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.78rem;
-  font-style: italic;
-  line-height: 1.55;
-  text-align: center;
-  color: var(--rose-deep);
-}
-
-.book-cover-author {
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-  text-align: center;
-  opacity: 0.75;
 }
 
 .badge-pill {
   display: inline-block;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--rose-deep);
@@ -370,61 +603,14 @@ h1 {
   font-style: italic;
   color: var(--rose);
   margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
 }
 
 .book-desc {
-  font-size: 0.93rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   line-height: 1.78;
   margin-bottom: 2rem;
   max-width: 460px;
-}
-
-/* ——— Credentials ——— */
-
-.cred-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.cred-item {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.cred-item:first-child {
-  border-top: 1px solid var(--border);
-}
-
-.cred-org {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--rose);
-  min-width: 160px;
-  flex-shrink: 0;
-}
-
-.cred-name {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-
-@media (max-width: 640px) {
-  .cred-item {
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-  .cred-org {
-    min-width: unset;
-  }
 }
 
 /* ——— Contact ——— */
@@ -455,15 +641,12 @@ h1 {
   transition: color 0.2s ease;
 }
 
-.contact-link:first-child {
-  border-top: 1px solid var(--border);
-}
+.contact-link:first-child { border-top: 1px solid var(--border); }
 
-.contact-link:hover .contact-link-value {
-  color: var(--rose);
-}
+.contact-link:hover .contact-link-value { color: var(--rose); }
 
 .contact-link-label {
+  font-family: 'Inter', sans-serif;
   font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -474,7 +657,9 @@ h1 {
 }
 
 .contact-link-value {
-  font-size: 0.95rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 300;
   color: var(--text);
   transition: color 0.2s ease;
 }
@@ -482,30 +667,67 @@ h1 {
 /* ——— Footer ——— */
 
 footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+}
+
+.footer-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 2.5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  border-top: 1px solid var(--border);
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-philosophy {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-name {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
 
-.footer-copy {
-  font-size: 0.76rem;
+.footer-sep {
   color: var(--text-light);
-  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+}
+
+.footer-org {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-org:hover { color: var(--rose); }
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-light);
 }
 
 /* ——— Responsive ——— */
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
+
   nav {
     padding: 1.1rem 1.5rem;
   }
@@ -522,10 +744,9 @@ footer {
     padding: 3.5rem 1.5rem 4.5rem;
   }
 
-  .hero-photo,
-  .hero-photo-placeholder {
-    width: 152px;
-    height: 152px;
+  .hero-photo {
+    width: 110px;
+    height: 110px;
   }
 
   .section,
@@ -533,8 +754,17 @@ footer {
     padding: 3rem 1.5rem;
   }
 
+  .paths-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
   .roles-grid {
     grid-template-columns: 1fr;
+  }
+
+  .offers-block--night {
+    padding: 1.5rem;
   }
 
   .book-inner {
@@ -547,10 +777,14 @@ footer {
     justify-content: center;
   }
 
-  footer {
+  .cred-item {
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-    padding: 2rem 1.5rem;
+    gap: 0.25rem;
   }
+
+  .cred-org { min-width: unset; }
+
+  .fork-label { width: 240px; }
+
+  footer { padding: 2rem 1.5rem; }
 }

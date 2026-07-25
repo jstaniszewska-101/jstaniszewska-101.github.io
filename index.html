@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Joanna Staniszewska — facilitator, systems thinker, and author. Helping organizations see what they cannot see about themselves. Available for consulting across the EU and USA." />
+  <meta name="description" content="Joanna Staniszewska — facilitator, systems thinker, and author. Helping organizations see what they cannot see about themselves. Available across the EU and USA." />
   <meta property="og:title" content="Joanna Staniszewska" />
-  <meta property="og:description" content="Facilitator · Systems Thinker · Author · Co-founder, Being in Systems" />
+  <meta property="og:description" content="Facilitator · Systems Thinker · Author · Being in Systems" />
   <meta property="og:type" content="website" />
   <title>Joanna Staniszewska</title>
+
+  <!--
+    Typography: two families only.
+    Cormorant Garamond — serif, for headings and flowing prose
+    Inter — sans-serif, for labels, captions, navigation
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -20,7 +26,7 @@
     <a href="#" class="nav-name">Joanna Staniszewska</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#invitation">Invitation</a></li>
       <li><a href="#book">Book</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -29,99 +35,239 @@
   <!-- ——— Hero ——— -->
   <section class="hero">
 
-    <img src="Joanna_Staniszewska_400x400.jpeg" alt="Joanna Staniszewska" class="hero-photo" />
+    <div class="hero-photos">
+      <img src="Joanna_Staniszewska_400x400.jpeg"
+           alt="Joanna Staniszewska"
+           class="hero-photo hero-photo--day"
+           title="The outer path" />
+      <img src="Joanna_flower.jpeg"
+           alt="Joanna Staniszewska"
+           class="hero-photo hero-photo--night"
+           title="The inner path"
+           onerror="this.style.display='none'" />
+    </div>
 
     <h1>Joanna<br>Staniszewska</h1>
 
     <p class="tagline">
-      Helping organizations see what<br>
-      they cannot see about themselves.
+      Helping organizations see what they cannot see about themselves.
+    </p>
+    <p class="tagline-inner">
+      And holding space for those who are thirsty for truth — their own.
     </p>
 
     <div class="hero-badges">
-      <span class="badge">Being in Systems</span>
-      <span class="badge">Systems Thinking</span>
+      <span class="badge badge--day">Systems · Organizations</span>
+      <span class="badge badge--night">Inner Work · Retreats</span>
       <span class="badge">EU · USA</span>
     </div>
 
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Work with me</a>
+      <a href="#invitation" class="btn btn-primary">You are invited</a>
       <a href="#book" class="btn btn-outline">The Book</a>
     </div>
 
+    <p class="hero-welcome">
+      You found your way here. That's already something.
+    </p>
+
   </section>
 
-  <!-- ——— About ——— -->
+  <!-- ——— About: Two Paths ——— -->
   <section class="section" id="about">
     <span class="section-label">About</span>
 
-    <p class="about-text">
-      I've spent years building businesses — and slowly discovered that the most
-      important transformations begin from within. Today, as co-managing director of
-      <strong>Being in Systems</strong>, I work as a transformation servant:
-      creating spaces where leaders and organizations can meet themselves differently.
-    </p>
+    <!-- Fork visual -->
+    <div class="fork-visual">
+      <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M100 8 L100 45" stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M100 45 Q90 58 52 72" stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M100 45 Q110 58 148 72" stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="100" cy="8" r="3.5" fill="#BE8B85" opacity="0.7"/>
+        <circle cx="52" cy="78" r="3" fill="#BE8B85" opacity="0.5"/>
+        <circle cx="148" cy="78" r="3" fill="#7b6fa0" opacity="0.5"/>
+      </svg>
+      <p class="fork-label">
+        <span class="fork-label--day">☀ the outer path</span>
+        <span class="fork-label--night">the inner path ✦</span>
+      </p>
+    </div>
 
-    <p class="about-text">
-      With 20+ years of experience across 20+ international markets, I work as an
-      independent consultant with organizations across the European Union and the
-      United States — offering facilitation, leadership program design, and
-      systemic advisory rooted in Theory U, Teal organizations, and Emergent
-      Entrepreneurship.
-    </p>
+    <!-- Two paths -->
+    <div class="paths-grid">
+
+      <div class="path path--day">
+        <div class="path-photo-wrap">
+          <img src="Joanna_Staniszewska_400x400.jpeg"
+               alt="Joanna — the outer world"
+               class="path-photo" />
+        </div>
+        <p class="path-label-small">☀ outer world</p>
+        <p class="about-text">
+          For twelve years I built an agency that won the&nbsp;#1 title in Poland
+          at Ad World Masters — two consecutive years in a row. We operated
+          across 20+ markets, serving Fortune&nbsp;50 clients, with one
+          project internally awarded for three years running.
+        </p>
+        <p class="about-text">
+          For six years I taught at six universities at every level,
+          including MBA. None of it would have been possible without
+          the teams we built together.
+        </p>
+        <p class="about-text">
+          Today I work within <strong>Being in Systems</strong> as
+          co-managing director, alongside an ongoing MBA in Creative Enterprises
+          at Meridian University, California — and a deep immersion
+          in emergent entrepreneurship.
+        </p>
+      </div>
+
+      <div class="path path--night">
+        <div class="path-photo-wrap">
+          <img src="Joanna_flower.jpeg"
+               alt="Joanna — the inner world"
+               class="path-photo"
+               onerror="this.src='Joanna_Staniszewska_400x400.jpeg'" />
+        </div>
+        <p class="path-label-small">✦ inner world</p>
+        <p class="about-text">
+          Soul Body Fusion. Regression. Visualization. Three years of
+          Live Flow therapy. A year with 2BElemental as a practitioner.
+          Work with the psyche and collective trauma — meridians, women's
+          circles, transurfing, certified spiritual coaching.
+        </p>
+        <p class="about-text">
+          A happiness course at Ahmedabad University. The Conscious Leadership
+          Guild retreat in the Netherlands. And countless hours in
+          the quiet that speaks.
+        </p>
+        <p class="about-text">
+          <em>Guess which path I'm more drawn to?&nbsp;😊</em>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Merge visual -->
+    <div class="merge-visual">
+      <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M52 8 Q90 32 100 45" stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M148 8 Q110 32 100 45" stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M100 45 L100 82" stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="52" cy="4" r="3" fill="#BE8B85" opacity="0.5"/>
+        <circle cx="148" cy="4" r="3" fill="#7b6fa0" opacity="0.5"/>
+        <circle cx="100" cy="86" r="3.5" fill="#BE8B85" opacity="0.7"/>
+      </svg>
+      <p class="merge-caption">Both paths led here.</p>
+    </div>
+
   </section>
 
-  <!-- ——— Work ——— -->
-  <div class="section-wide" id="work">
+  <!-- ——— Invitation (formerly Work) ——— -->
+  <div class="section-wide" id="invitation">
     <div class="section-wide-inner">
-      <span class="section-label">What I do</span>
-      <div class="roles-grid">
+      <span class="section-label">Invitation</span>
 
-        <div class="role-card">
-          <h3 class="role-title">Facilitation</h3>
-          <p class="role-desc">
-            Sessions and programs for executive teams navigating complexity.
-            I work in the space where organizational structure meets human
-            awareness — 2+1 individual format and group curriculum programs.
-          </p>
+      <!-- Day: business offerings -->
+      <div class="offers-block offers-block--day">
+        <p class="offers-subtitle">☀ the outer world — organizational work</p>
+        <div class="roles-grid">
+
+          <div class="role-card role-card--day">
+            <h3 class="role-title">Facilitation</h3>
+            <p class="role-desc">
+              Sessions and programs for executive teams navigating complexity.
+              I work in the space where organizational structure meets human
+              awareness — 2+1 individual format and group curriculum programs.
+            </p>
+          </div>
+
+          <div class="role-card role-card--day">
+            <h3 class="role-title">Consulting</h3>
+            <p class="role-desc">
+              Available for contract engagements across the EU and USA —
+              organizational advisory, leadership program design, and
+              systemic change processes rooted in Theory U and
+              Emergent Entrepreneurship.
+            </p>
+          </div>
+
+          <div class="role-card role-card--day">
+            <h3 class="role-title">Writing</h3>
+            <p class="role-desc">
+              Author of a philosophical guide to organizations — mapping
+              the interior conditions that shape collective life, for
+              leaders who want to see whole.
+            </p>
+          </div>
+
         </div>
-
-        <div class="role-card">
-          <h3 class="role-title">Consulting</h3>
-          <p class="role-desc">
-            Available for contract engagements across the EU and USA —
-            organizational advisory, leadership program design, and
-            systemic change processes.
-          </p>
-        </div>
-
-        <div class="role-card">
-          <h3 class="role-title">Writing</h3>
-          <p class="role-desc">
-            Author of a philosophical guide to organizations — mapping
-            the interior conditions that shape collective life, for
-            leaders who want to see whole.
-          </p>
-        </div>
-
-        <div class="role-card">
-          <h3 class="role-title">Education</h3>
-          <p class="role-desc">
-            MBA in Creative Enterprises, Meridian University CA.
-            Exploring the intersection of creativity, leadership,
-            and systemic transformation.
-          </p>
-        </div>
-
       </div>
+
+      <!-- Night: inner offerings -->
+      <div class="offers-block offers-block--night">
+        <p class="offers-subtitle offers-subtitle--night">✦ the inner world — personal work</p>
+        <div class="roles-grid">
+
+          <div class="role-card role-card--night">
+            <h3 class="role-title role-title--night">Inner Work Facilitation</h3>
+            <p class="role-desc role-desc--night">
+              Guided experiences for those ready to go beneath the surface.
+              Soul Body Fusion, cord-cutting, visualization, and somatic
+              practices — held in a safe, intentional space.
+            </p>
+          </div>
+
+          <div class="role-card role-card--night">
+            <h3 class="role-title role-title--night">Existential Coaching</h3>
+            <p class="role-desc role-desc--night">
+              For people at a threshold. Certified in existential well-being
+              counseling (KU Leuven, person-centered experiential approach)
+              and spiritual coaching — meeting you exactly where you are.
+            </p>
+          </div>
+
+          <div class="role-card role-card--night">
+            <h3 class="role-title role-title--night">Retreat Design</h3>
+            <p class="role-desc role-desc--night">
+              Immersive experiences that weave body, mind, and soul.
+              For individuals and small groups who are thirsty — not for
+              more information, but for direct experience of themselves.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <!-- ——— Being in Systems ——— -->
+  <section class="section" id="being">
+    <span class="section-label">Currently</span>
+    <p class="about-text">
+      My organizational work unfolds within
+      <strong><a href="https://www.beinginsystems.com" class="inline-link" target="_blank" rel="noopener">Being in Systems</a></strong> —
+      a consultancy that sees organizations as living organisms.
+      We work across five dimensions — Safety, Empowerment, Joy, Trust, and Possibilities —
+      catalyzing transformation that begins from within. The work is quiet, systemic,
+      and genuinely human. I am also engaged in <strong>Emergent Entrepreneurship</strong>
+      as a practice and a philosophy: building what wants to exist, not what
+      we already know how to name.
+    </p>
+  </section>
 
   <!-- ——— Credentials ——— -->
   <div class="section-wide" id="credentials">
     <div class="section-wide-inner">
       <span class="section-label">Credentials &amp; Recognition</span>
+
+      <p class="cred-path-label">☀ outer world</p>
       <ul class="cred-list">
+        <li class="cred-item">
+          <span class="cred-org">Meridian University CA</span>
+          <span class="cred-name">MBA in Creative Enterprises — in progress</span>
+        </li>
         <li class="cred-item">
           <span class="cred-org">Vanderbilt University</span>
           <span class="cred-name">Agentic AI &amp; AI Agents: A Primer for Leaders · GenAI &amp; AI Agent Organizational Strategy for Leaders</span>
@@ -131,18 +277,39 @@
           <span class="cred-name">u.lab: Leading From the Emerging Future · Becoming a More Equitable Educator</span>
         </li>
         <li class="cred-item">
-          <span class="cred-org">KU Leuven</span>
-          <span class="cred-name">Existential Well-being Counseling — Person-Centered Experiential Approach</span>
-        </li>
-        <li class="cred-item">
-          <span class="cred-org">2BElemental</span>
-          <span class="cred-name">Practitioner Certified — Integrated Systems-Based Leadership</span>
-        </li>
-        <li class="cred-item">
-          <span class="cred-org">Queentrepreneur Women's Foundation</span>
+          <span class="cred-org">Queentrepreneur Foundation</span>
           <span class="cred-name">Most Committed Board Member 2025</span>
         </li>
       </ul>
+
+      <p class="cred-path-label cred-path-label--night">✦ inner world</p>
+      <ul class="cred-list cred-list--night">
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">KU Leuven</span>
+          <span class="cred-name cred-name--night">Existential Well-being Counseling — Person-Centered Experiential Approach</span>
+        </li>
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">2BElemental</span>
+          <span class="cred-name cred-name--night">Practitioner Certified — Integrated Systems-Based Leadership</span>
+        </li>
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">Soul Body Fusion</span>
+          <span class="cred-name cred-name--night">Practitioner</span>
+        </li>
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">Live Flow Therapy</span>
+          <span class="cred-name cred-name--night">Three years of practice</span>
+        </li>
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">Ahmedabad University</span>
+          <span class="cred-name cred-name--night">Certified Spiritual Coach · The Science of Well-being</span>
+        </li>
+        <li class="cred-item cred-item--night">
+          <span class="cred-org cred-org--night">Conscious Leadership Guild</span>
+          <span class="cred-name cred-name--night">Retreat — Netherlands 2026</span>
+        </li>
+      </ul>
+
     </div>
   </div>
 
@@ -172,9 +339,8 @@
           becomes possible.
         </p>
 
-        <a
-          href="mailto:j.staniszewska@youll.pl?subject=Book%20%E2%80%94%20notify%20me"
-          class="btn btn-outline">
+        <a href="mailto:joanna@beinginsystems.com?subject=Book%20%E2%80%94%20notify%20me"
+           class="btn btn-outline">
           Notify me when it's out &rarr;
         </a>
       </div>
@@ -187,15 +353,15 @@
     <span class="section-label">Contact</span>
 
     <p class="contact-intro">
-      Open to consulting engagements, facilitation, and speaking
+      Open to consulting engagements, facilitation, retreats, and speaking
       invitations — across the EU and USA.
     </p>
 
     <div class="contact-list">
 
-      <a href="mailto:j.staniszewska@youll.pl" class="contact-link">
+      <a href="mailto:joanna@beinginsystems.com" class="contact-link">
         <span class="contact-link-label">Email</span>
-        <span class="contact-link-value">j.staniszewska@youll.pl</span>
+        <span class="contact-link-value">joanna@beinginsystems.com</span>
       </a>
 
       <a href="https://www.linkedin.com/in/joannastaniszewska" class="contact-link" target="_blank" rel="noopener noreferrer">
@@ -218,8 +384,18 @@
 
   <!-- ——— Footer ——— -->
   <footer>
-    <span class="footer-name">Joanna Staniszewska</span>
-    <span class="footer-copy">&copy; 2026 &middot; Being in Systems</span>
+    <div class="footer-inner">
+      <p class="footer-philosophy">
+        Both paths are real. Both are necessary. Both are welcome here.
+      </p>
+      <div class="footer-meta">
+        <span class="footer-name">Joanna Staniszewska</span>
+        <span class="footer-sep">&middot;</span>
+        <a href="https://www.beinginsystems.com" class="footer-org" target="_blank" rel="noopener">Being in Systems</a>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-copy">&copy; 2026</span>
+      </div>
+    </div>
   </footer>
 
 </body>
