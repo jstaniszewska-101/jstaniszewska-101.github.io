@@ -327,19 +327,13 @@
 
     <!-- Logo SVG -->
     <svg width="80" height="134" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Joanna Staniszewska logo">
-      <!-- Left spiral (rose) -->
-      <circle cx="35" cy="20" r="5" stroke="#BE8B85" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <circle cx="35" cy="20" r="2" fill="#BE8B85" opacity="0.5"/>
+      <!-- Left spiral (rose) — winds inward clockwise, then curves to merge -->
+      <path d="M 46 20 A 11 11 0 0 0 24 20 A 8 8 0 0 1 40 20 A 5 5 0 0 0 30 20 A 2 2 0 0 1 34 20 C 35 50, 55 80, 60 110"
+            stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
-      <!-- Right spiral (indigo) -->
-      <circle cx="85" cy="20" r="5" stroke="#7b6fa0" stroke-width="1.5" fill="none" opacity="0.7"/>
-      <circle cx="85" cy="20" r="2" fill="#7b6fa0" opacity="0.5"/>
-
-      <!-- Left curve: rose path from left spiral to merge point -->
-      <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#BE8B85" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-
-      <!-- Right curve: indigo path from right spiral to merge point -->
-      <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#7b6fa0" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- Right spiral (indigo) — mirror, winds inward, then curves to merge -->
+      <path d="M 74 20 A 11 11 0 0 1 96 20 A 8 8 0 0 0 80 20 A 5 5 0 0 1 90 20 A 2 2 0 0 0 86 20 C 85 50, 65 80, 60 110"
+            stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
       <!-- Single merged line going down — gradient via two overlapping paths -->
       <path d="M 60 110 L 60 168" stroke="url(#mergeGrad)" stroke-width="1.8" stroke-linecap="round"/>
@@ -373,12 +367,10 @@
 
         <div class="logo-variant">
           <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="35" cy="20" r="5" stroke="#BE8B85" stroke-width="1.5" fill="none" opacity="0.7"/>
-            <circle cx="35" cy="20" r="2" fill="#BE8B85" opacity="0.5"/>
-            <circle cx="85" cy="20" r="5" stroke="#7b6fa0" stroke-width="1.5" fill="none" opacity="0.7"/>
-            <circle cx="85" cy="20" r="2" fill="#7b6fa0" opacity="0.5"/>
-            <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#BE8B85" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-            <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#7b6fa0" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M 46 20 A 11 11 0 0 0 24 20 A 8 8 0 0 1 40 20 A 5 5 0 0 0 30 20 A 2 2 0 0 1 34 20 C 35 50, 55 80, 60 110"
+                  stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M 74 20 A 11 11 0 0 1 96 20 A 8 8 0 0 0 80 20 A 5 5 0 0 1 90 20 A 2 2 0 0 0 86 20 C 85 50, 65 80, 60 110"
+                  stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
             <path d="M 60 110 L 60 168" stroke="url(#g1)" stroke-width="1.8" stroke-linecap="round"/>
             <circle cx="60" cy="174" r="4.5" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.8"/>
             <circle cx="60" cy="174" r="1.8" fill="#BE8B85" opacity="0.6"/>
@@ -397,12 +389,10 @@
         <div class="logo-variant">
           <div class="logo-bg-dark">
             <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="35" cy="20" r="5" stroke="#EDD9D6" stroke-width="1.5" fill="none" opacity="0.6"/>
-              <circle cx="35" cy="20" r="2" fill="#EDD9D6" opacity="0.4"/>
-              <circle cx="85" cy="20" r="5" stroke="#c5b8e8" stroke-width="1.5" fill="none" opacity="0.6"/>
-              <circle cx="85" cy="20" r="2" fill="#c5b8e8" opacity="0.4"/>
-              <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#EDD9D6" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
-              <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#c5b8e8" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M 46 20 A 11 11 0 0 0 24 20 A 8 8 0 0 1 40 20 A 5 5 0 0 0 30 20 A 2 2 0 0 1 34 20 C 35 50, 55 80, 60 110"
+                    stroke="#EDD9D6" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M 74 20 A 11 11 0 0 1 96 20 A 8 8 0 0 0 80 20 A 5 5 0 0 1 90 20 A 2 2 0 0 0 86 20 C 85 50, 65 80, 60 110"
+                    stroke="#c5b8e8" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
               <path d="M 60 110 L 60 168" stroke="url(#g2)" stroke-width="1.8" stroke-linecap="round"/>
               <circle cx="60" cy="174" r="4.5" stroke="url(#g2)" stroke-width="1.5" fill="none" opacity="0.7"/>
               <circle cx="60" cy="174" r="1.8" fill="#EDD9D6" opacity="0.5"/>
