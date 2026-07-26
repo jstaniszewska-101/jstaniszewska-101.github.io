@@ -363,53 +363,51 @@
     <section class="brand-section">
       <h2 class="brand-section-title">Logo</h2>
 
-      <!-- Two versions side by side -->
+      <!-- Two versions side by side — updated spirals -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; margin-bottom:2.5rem;">
 
-        <!-- ——— VERSION A: spiral opens from centre ——— -->
+        <!-- ——— VERSION A: spiral grows from centre outward ——— -->
         <div>
           <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); margin-bottom:0.6rem;">A — Opens from centre</p>
           <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
-            Like a flower opening. The mark begins as a seed and unfurls outward — emergence, becoming.
+            Seed unfurling outward — emergence, becoming.
           </p>
           <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
 
             <div class="logo-variant">
               <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!--
-                  Left spiral A — rose, clockwise, grows from centre (62,76) outward.
-                  1.5 turns = 6 quarter-arc bezier segments.
-                  Control points computed with k=0.552 tangent method.
-                  Key nodes: (62,72)→(69,76)→(62,87)→(47,76)→(62,57)→(84,76)→(62,100)
+                  Left spiral A — rose, CW, grows from centre (62,76) outward. 1.5 turns.
+                  r sequence: 4→6→9→12→15→17. k=0.552 tangent method.
+                  Nodes: (62,72)→(67,76)→(62,84)→(51,76)→(62,62)→(77,76)→(62,92)
                 -->
-                <circle cx="62" cy="76" r="3" fill="#BE8B85" opacity="0.55"/>
+                <circle cx="62" cy="76" r="3.5" fill="#BE8B85"/>
                 <path d="M 62 72
-                         C 64 72, 69 72, 69 76
-                         C 69 80, 68 87, 62 87
-                         C 56 87, 47 84, 47 76
-                         C 47 68, 51.5 57, 62 57
-                         C 72.5 57, 84 64, 84 76
-                         C 84 88, 75 100, 62 100
-                         C 62 118, 90 132, 100 138"
-                      stroke="#BE8B85" stroke-width="3" stroke-linecap="round" fill="none"/>
+                         C 64 72, 67 73, 67 76
+                         C 67 79, 66 84, 62 84
+                         C 58 84, 51 82, 51 76
+                         C 51 70, 54 62, 62 62
+                         C 70 62, 77 67, 77 76
+                         C 77 85, 70 92, 62 92
+                         C 62 112, 90 130, 100 138"
+                      stroke="#BE8B85" stroke-width="2.5" stroke-linecap="round" fill="none"/>
                 <!--
-                  Right spiral A — indigo, counter-clockwise mirror.
-                  Key nodes: (138,72)→(131,76)→(138,87)→(153,76)→(138,57)→(116,76)→(138,100)
+                  Right spiral A — indigo, CCW mirror. Centre (138,76).
+                  Nodes: (138,72)→(133,76)→(138,84)→(149,76)→(138,62)→(123,76)→(138,92)
                 -->
-                <circle cx="138" cy="76" r="3" fill="#7b6fa0" opacity="0.55"/>
+                <circle cx="138" cy="76" r="3.5" fill="#7b6fa0"/>
                 <path d="M 138 72
-                         C 136 72, 131 72, 131 76
-                         C 131 80, 132 87, 138 87
-                         C 144 87, 153 84, 153 76
-                         C 153 68, 148.5 57, 138 57
-                         C 127.5 57, 116 64, 116 76
-                         C 116 88, 125 100, 138 100
-                         C 138 118, 110 132, 100 138"
-                      stroke="#7b6fa0" stroke-width="3" stroke-linecap="round" fill="none"/>
-                <!-- Merged line -->
-                <path d="M 100 138 L 100 168" stroke="url(#va_l)" stroke-width="3.5" stroke-linecap="round"/>
-                <circle cx="100" cy="174" r="5.5" stroke="url(#va_l)" stroke-width="2" fill="none" opacity="0.8"/>
-                <circle cx="100" cy="174" r="2.5" fill="#BE8B85" opacity="0.65"/>
+                         C 136 72, 133 73, 133 76
+                         C 133 79, 134 84, 138 84
+                         C 142 84, 149 82, 149 76
+                         C 149 70, 146 62, 138 62
+                         C 130 62, 123 67, 123 76
+                         C 123 85, 130 92, 138 92
+                         C 138 112, 110 130, 100 138"
+                      stroke="#7b6fa0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Merged line + solid end dot -->
+                <path d="M 100 138 L 100 168" stroke="url(#va_l)" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="100" cy="174" r="5" fill="#7b6fa0" opacity="0.8"/>
                 <defs>
                   <linearGradient id="va_l" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stop-color="#BE8B85"/>
@@ -425,29 +423,28 @@
             <div class="logo-variant">
               <div class="logo-bg-dark" style="padding:1rem;">
                 <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="62" cy="76" r="3" fill="#EDD9D6" opacity="0.45"/>
+                  <circle cx="62" cy="76" r="3.5" fill="#EDD9D6"/>
                   <path d="M 62 72
-                           C 64 72, 69 72, 69 76
-                           C 69 80, 68 87, 62 87
-                           C 56 87, 47 84, 47 76
-                           C 47 68, 51.5 57, 62 57
-                           C 72.5 57, 84 64, 84 76
-                           C 84 88, 75 100, 62 100
-                           C 62 118, 90 132, 100 138"
-                        stroke="#EDD9D6" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
-                  <circle cx="138" cy="76" r="3" fill="#c5b8e8" opacity="0.45"/>
+                           C 64 72, 67 73, 67 76
+                           C 67 79, 66 84, 62 84
+                           C 58 84, 51 82, 51 76
+                           C 51 70, 54 62, 62 62
+                           C 70 62, 77 67, 77 76
+                           C 77 85, 70 92, 62 92
+                           C 62 112, 90 130, 100 138"
+                        stroke="#EDD9D6" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
+                  <circle cx="138" cy="76" r="3.5" fill="#c5b8e8"/>
                   <path d="M 138 72
-                           C 136 72, 131 72, 131 76
-                           C 131 80, 132 87, 138 87
-                           C 144 87, 153 84, 153 76
-                           C 153 68, 148.5 57, 138 57
-                           C 127.5 57, 116 64, 116 76
-                           C 116 88, 125 100, 138 100
-                           C 138 118, 110 132, 100 138"
-                        stroke="#c5b8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
-                  <path d="M 100 138 L 100 168" stroke="url(#va_d)" stroke-width="3.5" stroke-linecap="round"/>
-                  <circle cx="100" cy="174" r="5.5" stroke="url(#va_d)" stroke-width="2" fill="none" opacity="0.7"/>
-                  <circle cx="100" cy="174" r="2.5" fill="#EDD9D6" opacity="0.55"/>
+                           C 136 72, 133 73, 133 76
+                           C 133 79, 134 84, 138 84
+                           C 142 84, 149 82, 149 76
+                           C 149 70, 146 62, 138 62
+                           C 130 62, 123 67, 123 76
+                           C 123 85, 130 92, 138 92
+                           C 138 112, 110 130, 100 138"
+                        stroke="#c5b8e8" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
+                  <path d="M 100 138 L 100 168" stroke="url(#va_d)" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="100" cy="174" r="5" fill="#c5b8e8" opacity="0.75"/>
                   <defs>
                     <linearGradient id="va_d" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stop-color="#EDD9D6"/>
@@ -462,50 +459,50 @@
           </div>
         </div>
 
-        <!-- ——— VERSION B: spiral opens from outside ——— -->
+        <!-- ——— VERSION B: spiral winds CCW inward — like a bud about to open ——— -->
         <div>
-          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#7b6fa0; margin-bottom:0.6rem;">B — Opens from outside</p>
+          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#7b6fa0; margin-bottom:0.6rem;">B — About to open</p>
           <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
-            Like a flower in full bloom. The spiral enters wide from the outer edge and arrives at the centre — presence, fullness.
+            Petals coiled inward, ready to unfurl — held potential.
           </p>
           <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
 
             <div class="logo-variant">
               <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!--
-                  Left spiral B — rose, clockwise, shrinks from outer top (62,49) inward.
-                  1.5 turns = 6 quarter-arc bezier segments.
-                  Key nodes: (62,49)→(85,76)→(62,95)→(47,76)→(62,65)→(69,76)→(62,80)
-                  r decreasing: 27→23→19→15→11→7→4
+                  Left spiral B — rose, CCW from outer top (62,49) winding inward.
+                  CCW: top→LEFT→bottom→right→top-inner→left-inner→bottom-inner
+                  r decreasing: 27→23→19→15→11→7→4. k=0.552 tangent.
+                  Nodes: (62,49)→(39,76)→(62,95)→(77,76)→(62,65)→(55,76)→(62,80)
                 -->
-                <circle cx="62" cy="49" r="3" fill="#BE8B85" opacity="0.5"/>
+                <circle cx="62" cy="49" r="3.5" fill="#BE8B85"/>
                 <path d="M 62 49
-                         C 77 49, 85 63, 85 76
-                         C 85 89, 72 95, 62 95
-                         C 52 95, 47 84, 47 76
-                         C 47 68, 56 65, 62 65
-                         C 68 65, 69 72, 69 76
-                         C 69 80, 64 80, 62 80
+                         C 47 49, 39 63, 39 76
+                         C 39 89, 52 95, 62 95
+                         C 72 95, 77 84, 77 76
+                         C 77 68, 68 65, 62 65
+                         C 56 65, 55 72, 55 76
+                         C 55 80, 60 80, 62 80
                          C 62 108, 90 130, 100 138"
-                      stroke="#BE8B85" stroke-width="3" stroke-linecap="round" fill="none"/>
+                      stroke="#BE8B85" stroke-width="2.5" stroke-linecap="round" fill="none"/>
                 <!--
-                  Right spiral B — indigo, counter-clockwise mirror.
-                  Key nodes: (138,49)→(115,76)→(138,95)→(153,76)→(138,65)→(131,76)→(138,80)
+                  Right spiral B — indigo, CW mirror. Centre (138,76).
+                  CW from top: top→RIGHT→bottom→left→top-inner→right-inner→bottom-inner
+                  Nodes: (138,49)→(161,76)→(138,95)→(123,76)→(138,65)→(145,76)→(138,80)
                 -->
-                <circle cx="138" cy="49" r="3" fill="#7b6fa0" opacity="0.5"/>
+                <circle cx="138" cy="49" r="3.5" fill="#7b6fa0"/>
                 <path d="M 138 49
-                         C 123 49, 115 63, 115 76
-                         C 115 89, 128 95, 138 95
-                         C 148 95, 153 84, 153 76
-                         C 153 68, 144 65, 138 65
-                         C 132 65, 131 72, 131 76
-                         C 131 80, 136 80, 138 80
+                         C 153 49, 161 63, 161 76
+                         C 161 89, 148 95, 138 95
+                         C 128 95, 123 84, 123 76
+                         C 123 68, 132 65, 138 65
+                         C 144 65, 145 72, 145 76
+                         C 145 80, 140 80, 138 80
                          C 138 108, 110 130, 100 138"
-                      stroke="#7b6fa0" stroke-width="3" stroke-linecap="round" fill="none"/>
-                <!-- Merged line -->
-                <path d="M 100 138 L 100 168" stroke="url(#vb_l)" stroke-width="3.5" stroke-linecap="round"/>
-                <circle cx="100" cy="174" r="5.5" stroke="url(#vb_l)" stroke-width="2" fill="none" opacity="0.8"/>
-                <circle cx="100" cy="174" r="2.5" fill="#BE8B85" opacity="0.65"/>
+                      stroke="#7b6fa0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Merged line + solid end dot -->
+                <path d="M 100 138 L 100 168" stroke="url(#vb_l)" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="100" cy="174" r="5" fill="#7b6fa0" opacity="0.8"/>
                 <defs>
                   <linearGradient id="vb_l" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stop-color="#BE8B85"/>
@@ -521,29 +518,28 @@
             <div class="logo-variant">
               <div class="logo-bg-dark" style="padding:1rem;">
                 <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="62" cy="49" r="3" fill="#EDD9D6" opacity="0.4"/>
+                  <circle cx="62" cy="49" r="3.5" fill="#EDD9D6"/>
                   <path d="M 62 49
-                           C 77 49, 85 63, 85 76
-                           C 85 89, 72 95, 62 95
-                           C 52 95, 47 84, 47 76
-                           C 47 68, 56 65, 62 65
-                           C 68 65, 69 72, 69 76
-                           C 69 80, 64 80, 62 80
+                           C 47 49, 39 63, 39 76
+                           C 39 89, 52 95, 62 95
+                           C 72 95, 77 84, 77 76
+                           C 77 68, 68 65, 62 65
+                           C 56 65, 55 72, 55 76
+                           C 55 80, 60 80, 62 80
                            C 62 108, 90 130, 100 138"
-                        stroke="#EDD9D6" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
-                  <circle cx="138" cy="49" r="3" fill="#c5b8e8" opacity="0.4"/>
+                        stroke="#EDD9D6" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
+                  <circle cx="138" cy="49" r="3.5" fill="#c5b8e8"/>
                   <path d="M 138 49
-                           C 123 49, 115 63, 115 76
-                           C 115 89, 128 95, 138 95
-                           C 148 95, 153 84, 153 76
-                           C 153 68, 144 65, 138 65
-                           C 132 65, 131 72, 131 76
-                           C 131 80, 136 80, 138 80
+                           C 153 49, 161 63, 161 76
+                           C 161 89, 148 95, 138 95
+                           C 128 95, 123 84, 123 76
+                           C 123 68, 132 65, 138 65
+                           C 144 65, 145 72, 145 76
+                           C 145 80, 140 80, 138 80
                            C 138 108, 110 130, 100 138"
-                        stroke="#c5b8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
-                  <path d="M 100 138 L 100 168" stroke="url(#vb_d)" stroke-width="3.5" stroke-linecap="round"/>
-                  <circle cx="100" cy="174" r="5.5" stroke="url(#vb_d)" stroke-width="2" fill="none" opacity="0.7"/>
-                  <circle cx="100" cy="174" r="2.5" fill="#EDD9D6" opacity="0.55"/>
+                        stroke="#c5b8e8" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
+                  <path d="M 100 138 L 100 168" stroke="url(#vb_d)" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="100" cy="174" r="5" fill="#c5b8e8" opacity="0.75"/>
                   <defs>
                     <linearGradient id="vb_d" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stop-color="#EDD9D6"/>
@@ -563,7 +559,7 @@
       <div class="logo-clearspace">
         <p><strong>Square mark:</strong> Both versions sit in a 1:1 square. Minimum clear space = 15% of mark width on all sides.</p>
         <p style="margin-top:0.75rem;"><strong>Meaning:</strong> Two spiral paths — one rose (outer world), one indigo (inner world) — that converge into a single line. They do not merge into sameness; they arrive together.</p>
-        <p style="margin-top:0.75rem;"><strong>Version choice:</strong> A for contexts of growth and emergence. B for contexts of wholeness and presence.</p>
+        <p style="margin-top:0.75rem;"><strong>Version A</strong> — growth from within. <strong>Version B</strong> — held potential, about to open.</p>
       </div>
 
     </section>
