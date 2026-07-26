@@ -127,9 +127,9 @@ nav {
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(250,248,246,0.88) 0%,
-    rgba(250,248,246,0.78) 50%,
-    rgba(250,248,246,0.65) 100%
+    rgba(250,248,246,0.93) 0%,
+    rgba(250,248,246,0.86) 50%,
+    rgba(250,248,246,0.75) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -230,14 +230,15 @@ h1 {
 }
 
 .badge--night {
-  color: var(--star);
-  background: rgba(30, 26, 56, 0.12);
-  border: 1px solid rgba(197, 184, 232, 0.3);
+  color: #4a3f7a;
+  background: rgba(197, 184, 232, 0.28);
+  border: 1px solid rgba(123, 111, 160, 0.45);
 }
 
 .badge:not(.badge--day):not(.badge--night) {
   color: var(--text-muted);
-  background: var(--bg-alt);
+  background: rgba(243, 238, 236, 0.85);
+  border: 1px solid var(--border);
 }
 
 .hero-cta {
@@ -472,6 +473,8 @@ h1 {
 .path {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .path-photo-wrap {
@@ -483,7 +486,7 @@ h1 {
   height: 88px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
 }
 
 .path--day .path-photo {

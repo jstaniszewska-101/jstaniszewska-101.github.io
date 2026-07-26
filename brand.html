@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joanna Staniszewska — Brand Guidelines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rose:       #BE8B85;
+      --rose-light: #EDD9D6;
+      --rose-deep:  #9E6B65;
+      --indigo:     #1e1a38;
+      --indigo-mid: #7b6fa0;
+      --lavender:   #c5b8e8;
+      --gold:       #d4af7a;
+      --cream:      #FAF8F6;
+      --cream-alt:  #F3EEEC;
+      --text:       #1E1C1B;
+      --text-muted: #7A7368;
+      --border:     #E8DFDC;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #fff;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ——— Header ——— */
+    .brand-header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 3rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .brand-header-text h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .brand-header-text p {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ——— Layout ——— */
+    .brand-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+    }
+
+    .brand-section {
+      margin-bottom: 5rem;
+    }
+
+    .brand-section-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rose);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ——— Logo section ——— */
+    .logo-display {
+      display: flex;
+      align-items: flex-start;
+      gap: 5rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-variant {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-variant-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .logo-bg-dark {
+      background: var(--indigo);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .logo-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.15rem;
+      letter-spacing: 0.03em;
+    }
+
+    .logo-clearspace {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: var(--cream-alt);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .logo-clearspace p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .logo-clearspace strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ——— Colors ——— */
+    .color-group {
+      margin-bottom: 2rem;
+    }
+
+    .color-group-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 120px;
+    }
+
+    .swatch-rect {
+      width: 120px;
+      height: 72px;
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .swatch-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .swatch-hex {
+      font-size: 0.68rem;
+      font-family: 'Inter', monospace;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ——— Typography ——— */
+    .type-specimen {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-specimen:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .type-family-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 1.25rem;
+    }
+
+    .type-sample-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .type-sample-sans {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .type-size-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    /* ——— Usage ——— */
+    .usage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .usage-card {
+      padding: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .usage-card--do {
+      border-top: 3px solid #7bba8a;
+    }
+
+    .usage-card--dont {
+      border-top: 3px solid #d47a7a;
+    }
+
+    .usage-card-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .usage-card--do .usage-card-label { color: #5a9a68; }
+    .usage-card--dont .usage-card-label { color: #b05a5a; }
+
+    .usage-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .usage-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .usage-card--do .usage-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #7bba8a;
+      font-weight: 600;
+    }
+
+    .usage-card--dont .usage-list li::before {
+      content: '×';
+      position: absolute;
+      left: 0;
+      color: #d47a7a;
+      font-weight: 600;
+    }
+
+    /* ——— Footer ——— */
+    .brand-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+
+    .brand-footer p {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ——— Header ——— -->
+  <header class="brand-header">
+
+    <!-- Logo SVG -->
+    <svg width="80" height="134" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Joanna Staniszewska logo">
+      <!-- Left spiral (rose) -->
+      <circle cx="35" cy="20" r="5" stroke="#BE8B85" stroke-width="1.5" fill="none" opacity="0.7"/>
+      <circle cx="35" cy="20" r="2" fill="#BE8B85" opacity="0.5"/>
+
+      <!-- Right spiral (indigo) -->
+      <circle cx="85" cy="20" r="5" stroke="#7b6fa0" stroke-width="1.5" fill="none" opacity="0.7"/>
+      <circle cx="85" cy="20" r="2" fill="#7b6fa0" opacity="0.5"/>
+
+      <!-- Left curve: rose path from left spiral to merge point -->
+      <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#BE8B85" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+      <!-- Right curve: indigo path from right spiral to merge point -->
+      <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#7b6fa0" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+      <!-- Single merged line going down — gradient via two overlapping paths -->
+      <path d="M 60 110 L 60 168" stroke="url(#mergeGrad)" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- End spiral -->
+      <circle cx="60" cy="174" r="4.5" stroke="url(#mergeGrad)" stroke-width="1.5" fill="none" opacity="0.8"/>
+      <circle cx="60" cy="174" r="1.8" fill="#BE8B85" opacity="0.6"/>
+
+      <defs>
+        <linearGradient id="mergeGrad" x1="60" y1="110" x2="60" y2="180" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#BE8B85"/>
+          <stop offset="100%" stop-color="#7b6fa0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="brand-header-text">
+      <h1>Joanna Staniszewska</h1>
+      <p>Brand Guidelines · 2026</p>
+    </div>
+
+  </header>
+
+  <main class="brand-content">
+
+    <!-- ——— Logo ——— -->
+    <section class="brand-section">
+      <h2 class="brand-section-title">Logo</h2>
+
+      <div class="logo-display">
+
+        <div class="logo-variant">
+          <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="35" cy="20" r="5" stroke="#BE8B85" stroke-width="1.5" fill="none" opacity="0.7"/>
+            <circle cx="35" cy="20" r="2" fill="#BE8B85" opacity="0.5"/>
+            <circle cx="85" cy="20" r="5" stroke="#7b6fa0" stroke-width="1.5" fill="none" opacity="0.7"/>
+            <circle cx="85" cy="20" r="2" fill="#7b6fa0" opacity="0.5"/>
+            <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#BE8B85" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#7b6fa0" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <path d="M 60 110 L 60 168" stroke="url(#g1)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="60" cy="174" r="4.5" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.8"/>
+            <circle cx="60" cy="174" r="1.8" fill="#BE8B85" opacity="0.6"/>
+            <defs>
+              <linearGradient id="g1" x1="60" y1="110" x2="60" y2="180" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#BE8B85"/>
+                <stop offset="100%" stop-color="#7b6fa0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <p class="logo-name">Joanna Staniszewska</p>
+          <p class="logo-tagline">Seeing clearly — from within</p>
+          <span class="logo-variant-label">Light background</span>
+        </div>
+
+        <div class="logo-variant">
+          <div class="logo-bg-dark">
+            <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="35" cy="20" r="5" stroke="#EDD9D6" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <circle cx="35" cy="20" r="2" fill="#EDD9D6" opacity="0.4"/>
+              <circle cx="85" cy="20" r="5" stroke="#c5b8e8" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <circle cx="85" cy="20" r="2" fill="#c5b8e8" opacity="0.4"/>
+              <path d="M 35 25 C 35 55, 55 80, 60 110" stroke="#EDD9D6" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M 85 25 C 85 55, 65 80, 60 110" stroke="#c5b8e8" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M 60 110 L 60 168" stroke="url(#g2)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="60" cy="174" r="4.5" stroke="url(#g2)" stroke-width="1.5" fill="none" opacity="0.7"/>
+              <circle cx="60" cy="174" r="1.8" fill="#EDD9D6" opacity="0.5"/>
+              <defs>
+                <linearGradient id="g2" x1="60" y1="110" x2="60" y2="180" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#EDD9D6"/>
+                  <stop offset="100%" stop-color="#c5b8e8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-variant-label">Dark background</span>
+        </div>
+
+      </div>
+
+      <div class="logo-clearspace">
+        <p><strong>Clear space:</strong> Maintain minimum padding around the logo equal to the width of one spiral circle (approximately the radius of the outer ring). Never place the logo closer than this distance to any edge, text, or competing visual element.</p>
+        <p style="margin-top: 0.75rem;"><strong>Meaning:</strong> Two spiral paths — one rose (outer world), one indigo (inner world) — that converge into a single line. They do not merge into sameness; they arrive together.</p>
+      </div>
+
+    </section>
+
+    <!-- ——— Colors ——— -->
+    <section class="brand-section">
+      <h2 class="brand-section-title">Color Palette</h2>
+
+      <div class="color-group">
+        <p class="color-group-label">Primary</p>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #BE8B85;"></div>
+            <span class="swatch-name">Dusty Rose</span>
+            <span class="swatch-hex">#BE8B85</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #1e1a38;"></div>
+            <span class="swatch-name">Deep Indigo</span>
+            <span class="swatch-hex">#1e1a38</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #FAF8F6; border: 1px solid #E8DFDC;"></div>
+            <span class="swatch-name">Warm Cream</span>
+            <span class="swatch-hex">#FAF8F6</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-group">
+        <p class="color-group-label">Accent</p>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #EDD9D6;"></div>
+            <span class="swatch-name">Rose Light</span>
+            <span class="swatch-hex">#EDD9D6</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #c5b8e8;"></div>
+            <span class="swatch-name">Lavender</span>
+            <span class="swatch-hex">#c5b8e8</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #d4af7a;"></div>
+            <span class="swatch-name">Gold</span>
+            <span class="swatch-hex">#d4af7a</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #7b6fa0;"></div>
+            <span class="swatch-name">Indigo Mid</span>
+            <span class="swatch-hex">#7b6fa0</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-rect" style="background: #9E6B65;"></div>
+            <span class="swatch-name">Rose Deep</span>
+            <span class="swatch-hex">#9E6B65</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ——— Typography ——— -->
+    <section class="brand-section">
+      <h2 class="brand-section-title">Typography</h2>
+
+      <div class="type-specimen">
+        <p class="type-family-label">Cormorant Garamond — Headings &amp; Prose</p>
+
+        <div class="type-row">
+          <span class="type-size-label">Display / 48px</span>
+          <span class="type-sample-serif" style="font-size: 3rem; font-weight: 300; line-height: 1.1; color: var(--text);">Guide to Organizations</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">H1 / 32px</span>
+          <span class="type-sample-serif" style="font-size: 2rem; font-weight: 300; color: var(--text);">The Interior Condition</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">H2 / 24px · italic</span>
+          <span class="type-sample-serif" style="font-size: 1.5rem; font-weight: 300; font-style: italic; color: var(--text-muted);">Two paths, one arrival.</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">Body / 18px</span>
+          <span class="type-sample-serif" style="font-size: 1.15rem; font-weight: 300; color: var(--text); max-width: 480px; line-height: 1.85;">Organizations are not machines. They are living systems — shaped by the beliefs, fears, and aspirations of the people inside them.</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">Caption / 14px · 500</span>
+          <span class="type-sample-serif" style="font-size: 0.9rem; font-weight: 500; color: var(--rose);">☀ The outer path</span>
+        </div>
+      </div>
+
+      <div class="type-specimen">
+        <p class="type-family-label">Inter — Labels, Navigation &amp; Captions</p>
+
+        <div class="type-row">
+          <span class="type-size-label">Nav / 11px · 400</span>
+          <span class="type-sample-sans" style="font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);">About · Invitation · Book · Contact</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">Label / 10px · 500</span>
+          <span class="type-sample-sans" style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose);">Credentials &amp; Recognition</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">Body / 14px · 400</span>
+          <span class="type-sample-sans" style="font-size: 0.88rem; font-weight: 400; color: var(--text-muted); line-height: 1.72; max-width: 420px;">One-on-one and small group work with leaders navigating complexity — in the space where structure meets human awareness.</span>
+        </div>
+        <div class="type-row">
+          <span class="type-size-label">Button / 11px · 400</span>
+          <span class="type-sample-sans" style="font-size: 0.76rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; background: var(--rose); color: #fff; padding: 0.5rem 1.25rem; border-radius: 3px;">You are invited</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ——— Usage ——— -->
+    <section class="brand-section">
+      <h2 class="brand-section-title">Usage</h2>
+
+      <div class="usage-grid">
+
+        <div class="usage-card usage-card--do">
+          <p class="usage-card-label">Do</p>
+          <ul class="usage-list">
+            <li>Use Cormorant Garamond for all headings, taglines, and flowing prose</li>
+            <li>Use Inter for labels, navigation, captions, and button text</li>
+            <li>Pair rose with warm cream backgrounds — never with bright white</li>
+            <li>Use the logo on cream or dark indigo backgrounds only</li>
+            <li>Maintain generous white space — let elements breathe</li>
+            <li>Use italic weight to signal the inner / reflective tone</li>
+            <li>Write in sentence case for headings; ALL CAPS only for micro-labels</li>
+          </ul>
+        </div>
+
+        <div class="usage-card usage-card--dont">
+          <p class="usage-card-label">Don't</p>
+          <ul class="usage-list">
+            <li>Do not place the logo on busy photographic backgrounds</li>
+            <li>Do not use bold weights for body text — lightness is intentional</li>
+            <li>Do not distort or rotate the logo</li>
+            <li>Do not use rose and indigo at equal saturation side by side</li>
+            <li>Do not use more than two typeface families</li>
+            <li>Do not write in triads or negations — "not X, but Y" breaks the voice</li>
+            <li>Do not mix day-palette and night-palette colors in the same section</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ——— Voice ——— -->
+    <section class="brand-section">
+      <h2 class="brand-section-title">Voice &amp; Tone</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">Qualities</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+            <li style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--text);">Warm without being soft</li>
+            <li style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--text);">Contemplative without being abstract</li>
+            <li style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--text);">Confident without claiming</li>
+            <li style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: var(--text);">Inviting, never instructing</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">Writing rules</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+            <li style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">One sentence — one idea</li>
+            <li style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">Short. Concrete. No hedging.</li>
+            <li style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">Define by what something <em>is</em>, never by what it is not</li>
+            <li style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">Avoid triads of parallel phrases</li>
+            <li style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">End on arrival, never on a door left ajar</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="brand-footer">
+    <p>Joanna Staniszewska &middot; Being in Systems &middot; &copy; 2026</p>
+  </footer>
+
+</body>
+</html>
