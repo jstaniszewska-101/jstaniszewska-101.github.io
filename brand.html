@@ -327,12 +327,12 @@
 
     <!-- Logo SVG -->
     <svg width="80" height="134" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Joanna Staniszewska logo">
-      <!-- Left spiral (rose) — 2 turns inward (alternating-centre arc method), exits to merge -->
-      <path d="M 23 32 A 12 12 0 0 0 47 32 A 9 9 0 0 1 29 32 A 6 6 0 0 0 41 32 A 3 3 0 0 1 35 32 C 40 65, 55 85, 60 110"
+      <!-- Left spiral (rose) — 2-turn CW bezier spiral, 8 quarter-arc segments, exits to merge -->
+      <path d="M 35 22 C 42 22,46.5 29,46.5 35 C 46.5 41,40.5 45,35 45 C 29.5 45,26.5 40,26.5 35 C 26.5 30,31 28,35 28 C 39 28,40.5 32,40.5 35 C 40.5 38,37 39,35 39 C 33 39,32.5 36.5,32.5 35 C 32.5 33.5,34.5 34,35 34 C 35 70,55 90,60 110"
             stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
-      <!-- Right spiral (indigo) — mirror 2 turns inward, exits to merge -->
-      <path d="M 97 32 A 12 12 0 0 1 73 32 A 9 9 0 0 0 91 32 A 6 6 0 0 1 79 32 A 3 3 0 0 0 85 32 C 80 65, 65 85, 60 110"
+      <!-- Right spiral (indigo) — 2-turn CCW bezier spiral (mirror), exits to merge -->
+      <path d="M 85 22 C 78 22,73.5 29,73.5 35 C 73.5 41,79.5 45,85 45 C 90.5 45,93.5 40,93.5 35 C 93.5 30,89 28,85 28 C 81 28,79.5 32,79.5 35 C 79.5 38,83 39,85 39 C 87 39,87.5 36.5,87.5 35 C 87.5 33.5,85.5 34,85 34 C 85 70,65 90,60 110"
             stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
       <!-- Single merged line going down — gradient via two overlapping paths -->
@@ -363,55 +363,207 @@
     <section class="brand-section">
       <h2 class="brand-section-title">Logo</h2>
 
-      <div class="logo-display">
+      <!-- Two versions side by side -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; margin-bottom:2.5rem;">
 
-        <div class="logo-variant">
-          <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 23 32 A 12 12 0 0 0 47 32 A 9 9 0 0 1 29 32 A 6 6 0 0 0 41 32 A 3 3 0 0 1 35 32 C 40 65, 55 85, 60 110"
-                  stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M 97 32 A 12 12 0 0 1 73 32 A 9 9 0 0 0 91 32 A 6 6 0 0 1 79 32 A 3 3 0 0 0 85 32 C 80 65, 65 85, 60 110"
-                  stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M 60 110 L 60 168" stroke="url(#g1)" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="60" cy="174" r="4.5" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.8"/>
-            <circle cx="60" cy="174" r="1.8" fill="#BE8B85" opacity="0.6"/>
-            <defs>
-              <linearGradient id="g1" x1="60" y1="110" x2="60" y2="180" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#BE8B85"/>
-                <stop offset="100%" stop-color="#7b6fa0"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <p class="logo-name">Joanna Staniszewska</p>
-          <p class="logo-tagline">Seeing clearly — from within</p>
-          <span class="logo-variant-label">Light background</span>
+        <!-- ——— VERSION A: spiral opens from centre ——— -->
+        <div>
+          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); margin-bottom:0.6rem;">A — Opens from centre</p>
+          <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
+            Like a flower opening. The mark begins as a seed and unfurls outward — emergence, becoming.
+          </p>
+          <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
+
+            <div class="logo-variant">
+              <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!--
+                  Left spiral A — rose, clockwise, grows from centre (62,76) outward.
+                  1.5 turns = 6 quarter-arc bezier segments.
+                  Control points computed with k=0.552 tangent method.
+                  Key nodes: (62,72)→(69,76)→(62,87)→(47,76)→(62,57)→(84,76)→(62,100)
+                -->
+                <circle cx="62" cy="76" r="3" fill="#BE8B85" opacity="0.55"/>
+                <path d="M 62 72
+                         C 64 72, 69 72, 69 76
+                         C 69 80, 68 87, 62 87
+                         C 56 87, 47 84, 47 76
+                         C 47 68, 51.5 57, 62 57
+                         C 72.5 57, 84 64, 84 76
+                         C 84 88, 75 100, 62 100
+                         C 62 118, 90 132, 100 138"
+                      stroke="#BE8B85" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!--
+                  Right spiral A — indigo, counter-clockwise mirror.
+                  Key nodes: (138,72)→(131,76)→(138,87)→(153,76)→(138,57)→(116,76)→(138,100)
+                -->
+                <circle cx="138" cy="76" r="3" fill="#7b6fa0" opacity="0.55"/>
+                <path d="M 138 72
+                         C 136 72, 131 72, 131 76
+                         C 131 80, 132 87, 138 87
+                         C 144 87, 153 84, 153 76
+                         C 153 68, 148.5 57, 138 57
+                         C 127.5 57, 116 64, 116 76
+                         C 116 88, 125 100, 138 100
+                         C 138 118, 110 132, 100 138"
+                      stroke="#7b6fa0" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!-- Merged line -->
+                <path d="M 100 138 L 100 168" stroke="url(#va_l)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="100" cy="174" r="5.5" stroke="url(#va_l)" stroke-width="2" fill="none" opacity="0.8"/>
+                <circle cx="100" cy="174" r="2.5" fill="#BE8B85" opacity="0.65"/>
+                <defs>
+                  <linearGradient id="va_l" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#BE8B85"/>
+                    <stop offset="100%" stop-color="#7b6fa0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <p class="logo-name">Joanna Staniszewska</p>
+              <p class="logo-tagline">Seeing clearly — from within</p>
+              <span class="logo-variant-label">Light</span>
+            </div>
+
+            <div class="logo-variant">
+              <div class="logo-bg-dark" style="padding:1rem;">
+                <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="62" cy="76" r="3" fill="#EDD9D6" opacity="0.45"/>
+                  <path d="M 62 72
+                           C 64 72, 69 72, 69 76
+                           C 69 80, 68 87, 62 87
+                           C 56 87, 47 84, 47 76
+                           C 47 68, 51.5 57, 62 57
+                           C 72.5 57, 84 64, 84 76
+                           C 84 88, 75 100, 62 100
+                           C 62 118, 90 132, 100 138"
+                        stroke="#EDD9D6" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+                  <circle cx="138" cy="76" r="3" fill="#c5b8e8" opacity="0.45"/>
+                  <path d="M 138 72
+                           C 136 72, 131 72, 131 76
+                           C 131 80, 132 87, 138 87
+                           C 144 87, 153 84, 153 76
+                           C 153 68, 148.5 57, 138 57
+                           C 127.5 57, 116 64, 116 76
+                           C 116 88, 125 100, 138 100
+                           C 138 118, 110 132, 100 138"
+                        stroke="#c5b8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+                  <path d="M 100 138 L 100 168" stroke="url(#va_d)" stroke-width="3.5" stroke-linecap="round"/>
+                  <circle cx="100" cy="174" r="5.5" stroke="url(#va_d)" stroke-width="2" fill="none" opacity="0.7"/>
+                  <circle cx="100" cy="174" r="2.5" fill="#EDD9D6" opacity="0.55"/>
+                  <defs>
+                    <linearGradient id="va_d" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#EDD9D6"/>
+                      <stop offset="100%" stop-color="#c5b8e8"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="logo-variant-label">Dark</span>
+            </div>
+
+          </div>
         </div>
 
-        <div class="logo-variant">
-          <div class="logo-bg-dark">
-            <svg width="100" height="167" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 23 32 A 12 12 0 0 0 47 32 A 9 9 0 0 1 29 32 A 6 6 0 0 0 41 32 A 3 3 0 0 1 35 32 C 40 65, 55 85, 60 110"
-                    stroke="#EDD9D6" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-              <path d="M 97 32 A 12 12 0 0 1 73 32 A 9 9 0 0 0 91 32 A 6 6 0 0 1 79 32 A 3 3 0 0 0 85 32 C 80 65, 65 85, 60 110"
-                    stroke="#c5b8e8" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-              <path d="M 60 110 L 60 168" stroke="url(#g2)" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="60" cy="174" r="4.5" stroke="url(#g2)" stroke-width="1.5" fill="none" opacity="0.7"/>
-              <circle cx="60" cy="174" r="1.8" fill="#EDD9D6" opacity="0.5"/>
-              <defs>
-                <linearGradient id="g2" x1="60" y1="110" x2="60" y2="180" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#EDD9D6"/>
-                  <stop offset="100%" stop-color="#c5b8e8"/>
-                </linearGradient>
-              </defs>
-            </svg>
+        <!-- ——— VERSION B: spiral opens from outside ——— -->
+        <div>
+          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#7b6fa0; margin-bottom:0.6rem;">B — Opens from outside</p>
+          <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
+            Like a flower in full bloom. The spiral enters wide from the outer edge and arrives at the centre — presence, fullness.
+          </p>
+          <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
+
+            <div class="logo-variant">
+              <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!--
+                  Left spiral B — rose, clockwise, shrinks from outer top (62,49) inward.
+                  1.5 turns = 6 quarter-arc bezier segments.
+                  Key nodes: (62,49)→(85,76)→(62,95)→(47,76)→(62,65)→(69,76)→(62,80)
+                  r decreasing: 27→23→19→15→11→7→4
+                -->
+                <circle cx="62" cy="49" r="3" fill="#BE8B85" opacity="0.5"/>
+                <path d="M 62 49
+                         C 77 49, 85 63, 85 76
+                         C 85 89, 72 95, 62 95
+                         C 52 95, 47 84, 47 76
+                         C 47 68, 56 65, 62 65
+                         C 68 65, 69 72, 69 76
+                         C 69 80, 64 80, 62 80
+                         C 62 108, 90 130, 100 138"
+                      stroke="#BE8B85" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!--
+                  Right spiral B — indigo, counter-clockwise mirror.
+                  Key nodes: (138,49)→(115,76)→(138,95)→(153,76)→(138,65)→(131,76)→(138,80)
+                -->
+                <circle cx="138" cy="49" r="3" fill="#7b6fa0" opacity="0.5"/>
+                <path d="M 138 49
+                         C 123 49, 115 63, 115 76
+                         C 115 89, 128 95, 138 95
+                         C 148 95, 153 84, 153 76
+                         C 153 68, 144 65, 138 65
+                         C 132 65, 131 72, 131 76
+                         C 131 80, 136 80, 138 80
+                         C 138 108, 110 130, 100 138"
+                      stroke="#7b6fa0" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <!-- Merged line -->
+                <path d="M 100 138 L 100 168" stroke="url(#vb_l)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="100" cy="174" r="5.5" stroke="url(#vb_l)" stroke-width="2" fill="none" opacity="0.8"/>
+                <circle cx="100" cy="174" r="2.5" fill="#BE8B85" opacity="0.65"/>
+                <defs>
+                  <linearGradient id="vb_l" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#BE8B85"/>
+                    <stop offset="100%" stop-color="#7b6fa0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <p class="logo-name">Joanna Staniszewska</p>
+              <p class="logo-tagline">Seeing clearly — from within</p>
+              <span class="logo-variant-label">Light</span>
+            </div>
+
+            <div class="logo-variant">
+              <div class="logo-bg-dark" style="padding:1rem;">
+                <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="62" cy="49" r="3" fill="#EDD9D6" opacity="0.4"/>
+                  <path d="M 62 49
+                           C 77 49, 85 63, 85 76
+                           C 85 89, 72 95, 62 95
+                           C 52 95, 47 84, 47 76
+                           C 47 68, 56 65, 62 65
+                           C 68 65, 69 72, 69 76
+                           C 69 80, 64 80, 62 80
+                           C 62 108, 90 130, 100 138"
+                        stroke="#EDD9D6" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+                  <circle cx="138" cy="49" r="3" fill="#c5b8e8" opacity="0.4"/>
+                  <path d="M 138 49
+                           C 123 49, 115 63, 115 76
+                           C 115 89, 128 95, 138 95
+                           C 148 95, 153 84, 153 76
+                           C 153 68, 144 65, 138 65
+                           C 132 65, 131 72, 131 76
+                           C 131 80, 136 80, 138 80
+                           C 138 108, 110 130, 100 138"
+                        stroke="#c5b8e8" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+                  <path d="M 100 138 L 100 168" stroke="url(#vb_d)" stroke-width="3.5" stroke-linecap="round"/>
+                  <circle cx="100" cy="174" r="5.5" stroke="url(#vb_d)" stroke-width="2" fill="none" opacity="0.7"/>
+                  <circle cx="100" cy="174" r="2.5" fill="#EDD9D6" opacity="0.55"/>
+                  <defs>
+                    <linearGradient id="vb_d" x1="100" y1="138" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#EDD9D6"/>
+                      <stop offset="100%" stop-color="#c5b8e8"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="logo-variant-label">Dark</span>
+            </div>
+
           </div>
-          <span class="logo-variant-label">Dark background</span>
         </div>
 
       </div>
 
       <div class="logo-clearspace">
-        <p><strong>Clear space:</strong> Maintain minimum padding around the logo equal to the width of one spiral circle (approximately the radius of the outer ring). Never place the logo closer than this distance to any edge, text, or competing visual element.</p>
-        <p style="margin-top: 0.75rem;"><strong>Meaning:</strong> Two spiral paths — one rose (outer world), one indigo (inner world) — that converge into a single line. They do not merge into sameness; they arrive together.</p>
+        <p><strong>Square mark:</strong> Both versions sit in a 1:1 square. Minimum clear space = 15% of mark width on all sides.</p>
+        <p style="margin-top:0.75rem;"><strong>Meaning:</strong> Two spiral paths — one rose (outer world), one indigo (inner world) — that converge into a single line. They do not merge into sameness; they arrive together.</p>
+        <p style="margin-top:0.75rem;"><strong>Version choice:</strong> A for contexts of growth and emergence. B for contexts of wholeness and presence.</p>
       </div>
 
     </section>
