@@ -103,11 +103,16 @@ nav {
 }
 
 .bis-globe {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: contain;
   flex-shrink: 0;
+  opacity: 0.45;
+  filter: saturate(0.3) brightness(1.05);
+  background: rgba(243,238,236,0.5);
+  border: 1px solid var(--border);
+  padding: 6px;
 }
 
 .nav-links {
@@ -448,7 +453,7 @@ h1 {
 
 .merge-visual svg {
   width: 200px;
-  height: 156px;
+  height: 172px;
 }
 
 .fork-label {
@@ -517,6 +522,7 @@ h1 {
 
 .path--day .path-photo {
   border: 2px solid var(--rose-light);
+  object-position: center 40%;
 }
 
 .path--night .path-photo {
