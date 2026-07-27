@@ -366,9 +366,9 @@
       <!-- Two versions side by side — updated spirals -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; margin-bottom:2.5rem;">
 
-        <!-- ——— VERSION A: spiral grows from centre outward ——— -->
+        <!-- ——— VERSION A1: spiral grows from centre outward ——— -->
         <div>
-          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); margin-bottom:0.6rem;">A — Opens from centre</p>
+          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); margin-bottom:0.6rem;">A1 — Opens from centre</p>
           <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
             Seed unfurling outward — emergence, becoming.
           </p>
@@ -459,46 +459,47 @@
           </div>
         </div>
 
-        <!-- ——— VERSION B: spiral winds CCW inward — like a bud about to open ——— -->
+        <!-- ——— VERSION A: spiral winds CCW — opposite rotation to A1 ——— -->
         <div>
-          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#7b6fa0; margin-bottom:0.6rem;">B — About to open</p>
+          <p style="font-size:0.63rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:#7b6fa0; margin-bottom:0.6rem;">A — Winds into the calyx</p>
           <p style="font-size:0.78rem; color:var(--text-muted); font-style:italic; line-height:1.6; margin-bottom:1.5rem;">
-            Petals coiled inward, ready to unfurl — held potential.
+            Same structure, opposite rotation — spiral winds inward to the heart of the calyx.
           </p>
           <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
 
             <div class="logo-variant">
               <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!--
-                  Left spiral B — rose, CCW from outer top (62,49) winding inward.
-                  CCW: top→LEFT→bottom→right→top-inner→left-inner→bottom-inner
-                  r decreasing: 27→23→19→15→11→7→4. k=0.552 tangent.
-                  Nodes: (62,49)→(39,76)→(62,95)→(77,76)→(62,65)→(55,76)→(62,80)
+                  Version A — CCW spiral (opposite rotation to A1).
+                  A1 left goes CW: centre → RIGHT → down → left → up → right-outer → down-outer
+                  A   left goes CCW: centre → LEFT → down → right → up → left-outer → down-outer
+                  Mirror of A1 beziers around the spiral centre x=62.
+                  Nodes: (62,72)→(57,76)→(62,84)→(73,76)→(62,62)→(47,76)→(62,92)→merge
                 -->
-                <circle cx="62" cy="49" r="3.5" fill="#BE8B85"/>
-                <path d="M 62 49
-                         C 47 49, 39 63, 39 76
-                         C 39 89, 52 95, 62 95
-                         C 72 95, 77 84, 77 76
-                         C 77 68, 68 65, 62 65
-                         C 56 65, 55 72, 55 76
-                         C 55 80, 60 80, 62 80
-                         C 62 108, 90 130, 100 138"
+                <circle cx="62" cy="76" r="3.5" fill="#BE8B85"/>
+                <path d="M 62 72
+                         C 60 72, 57 73, 57 76
+                         C 57 79, 58 84, 62 84
+                         C 66 84, 73 82, 73 76
+                         C 73 70, 70 62, 62 62
+                         C 54 62, 47 67, 47 76
+                         C 47 85, 54 92, 62 92
+                         C 62 112, 90 130, 100 138"
                       stroke="#BE8B85" stroke-width="2.5" stroke-linecap="round" fill="none"/>
                 <!--
-                  Right spiral B — indigo, CW mirror. Centre (138,76).
-                  CW from top: top→RIGHT→bottom→left→top-inner→right-inner→bottom-inner
-                  Nodes: (138,49)→(161,76)→(138,95)→(123,76)→(138,65)→(145,76)→(138,80)
+                  Right spiral A — mirror of left at x=100 (x'=200-x).
+                  Goes CW from centre (opposite of A1 right which is CCW).
+                  Nodes: (138,72)→(143,76)→(138,84)→(127,76)→(138,62)→(153,76)→(138,92)→merge
                 -->
-                <circle cx="138" cy="49" r="3.5" fill="#7b6fa0"/>
-                <path d="M 138 49
-                         C 153 49, 161 63, 161 76
-                         C 161 89, 148 95, 138 95
-                         C 128 95, 123 84, 123 76
-                         C 123 68, 132 65, 138 65
-                         C 144 65, 145 72, 145 76
-                         C 145 80, 140 80, 138 80
-                         C 138 108, 110 130, 100 138"
+                <circle cx="138" cy="76" r="3.5" fill="#7b6fa0"/>
+                <path d="M 138 72
+                         C 140 72, 143 73, 143 76
+                         C 143 79, 142 84, 138 84
+                         C 134 84, 127 82, 127 76
+                         C 127 70, 130 62, 138 62
+                         C 146 62, 153 67, 153 76
+                         C 153 85, 146 92, 138 92
+                         C 138 112, 110 130, 100 138"
                       stroke="#7b6fa0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
                 <!-- Merged line + solid end dot -->
                 <path d="M 100 138 L 100 168" stroke="url(#vb_l)" stroke-width="3" stroke-linecap="round"/>
@@ -518,26 +519,27 @@
             <div class="logo-variant">
               <div class="logo-bg-dark" style="padding:1rem;">
                 <svg width="160" height="160" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="62" cy="49" r="3.5" fill="#EDD9D6"/>
-                  <path d="M 62 49
-                           C 47 49, 39 63, 39 76
-                           C 39 89, 52 95, 62 95
-                           C 72 95, 77 84, 77 76
-                           C 77 68, 68 65, 62 65
-                           C 56 65, 55 72, 55 76
-                           C 55 80, 60 80, 62 80
-                           C 62 108, 90 130, 100 138"
+                  <circle cx="62" cy="76" r="3.5" fill="#EDD9D6"/>
+                  <path d="M 62 72
+                           C 60 72, 57 73, 57 76
+                           C 57 79, 58 84, 62 84
+                           C 66 84, 73 82, 73 76
+                           C 73 70, 70 62, 62 62
+                           C 54 62, 47 67, 47 76
+                           C 47 85, 54 92, 62 92
+                           C 62 112, 90 130, 100 138"
                         stroke="#EDD9D6" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
-                  <circle cx="138" cy="49" r="3.5" fill="#c5b8e8"/>
-                  <path d="M 138 49
-                           C 153 49, 161 63, 161 76
-                           C 161 89, 148 95, 138 95
-                           C 128 95, 123 84, 123 76
-                           C 123 68, 132 65, 138 65
-                           C 144 65, 145 72, 145 76
-                           C 145 80, 140 80, 138 80
-                           C 138 108, 110 130, 100 138"
+                  <circle cx="138" cy="76" r="3.5" fill="#c5b8e8"/>
+                  <path d="M 138 72
+                           C 140 72, 143 73, 143 76
+                           C 143 79, 142 84, 138 84
+                           C 134 84, 127 82, 127 76
+                           C 127 70, 130 62, 138 62
+                           C 146 62, 153 67, 153 76
+                           C 153 85, 146 92, 138 92
+                           C 138 112, 110 130, 100 138"
                         stroke="#c5b8e8" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.88"/>
+
                   <path d="M 100 138 L 100 168" stroke="url(#vb_d)" stroke-width="3" stroke-linecap="round"/>
                   <circle cx="100" cy="174" r="5" fill="#c5b8e8" opacity="0.75"/>
                   <defs>
