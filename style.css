@@ -419,10 +419,14 @@ h1 {
   margin: 2rem auto 0;
 }
 
-.fork-visual svg,
-.merge-visual svg {
+.fork-visual svg {
   width: 200px;
   height: 90px;
+}
+
+.merge-visual svg {
+  width: 200px;
+  height: 156px;
 }
 
 .fork-label {
