@@ -74,36 +74,43 @@
       <div class="about-wide-overlay"></div>
     </div>
 
-    <!-- Fork visual — A1 upside down: spirals hang below the fork arms -->
+    <!-- Fork visual — exact A1 beziers, flipped vertically (y_new = 134−y_original) -->
+    <!-- Centre shifts from (62,76)→(62,58) and (138,76)→(138,58). Arm exits upward to fork. -->
     <div class="fork-visual">
       <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <!-- Stem + top dot -->
         <circle cx="100" cy="4" r="3" fill="#BE8B85" opacity="0.7"/>
         <path d="M100 7 L100 25" stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- Fork arms curving down to spiral outer-tops -->
-        <path d="M100 25 C 82 25, 62 36, 62 46"
+        <!--
+          Left: same 6 beziers as A1 with y' = 134−y, x unchanged.
+          A1 nodes: (62,72)→(67,76)→(62,84)→(51,76)→(62,62)→(77,76)→(62,92)
+          Flipped:  (62,62)→(67,58)→(62,50)→(51,58)→(62,72)→(77,58)→(62,42)
+          Then arm from outer-top (62,42) up to fork junction (100,25).
+        -->
+        <circle cx="62" cy="58" r="2.8" fill="#BE8B85"/>
+        <path d="M 62 62
+                 C 64 62, 67 61, 67 58
+                 C 67 55, 66 50, 62 50
+                 C 58 50, 51 52, 51 58
+                 C 51 64, 54 72, 62 72
+                 C 70 72, 77 67, 77 58
+                 C 77 49, 70 42, 62 42
+                 C 62 32, 82 25, 100 25"
               stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <path d="M100 25 C 118 25, 138 36, 138 46"
-              stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <!-- Left A1 flipped — CW from outer-top (62,46), centre (62,62), winding downward -->
-        <circle cx="62" cy="62" r="2.8" fill="#BE8B85"/>
-        <path d="M 62 46
-                 C 70 46, 77 53, 77 62
-                 C 77 71, 70 78, 62 78
-                 C 54 78, 47 71, 47 62
-                 C 47 56, 54 54, 62 54
-                 C 66 54, 67 57, 67 62
-                 C 67 65, 64 66, 62 66"
-              stroke="#BE8B85" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <!-- Right A1 flipped — CCW mirror, centre (138,62) -->
-        <circle cx="138" cy="62" r="2.8" fill="#7b6fa0"/>
-        <path d="M 138 46
-                 C 130 46, 123 53, 123 62
-                 C 123 71, 130 78, 138 78
-                 C 146 78, 153 71, 153 62
-                 C 153 56, 146 54, 138 54
-                 C 134 54, 133 57, 133 62
-                 C 133 65, 136 66, 138 66"
+        <!--
+          Right: mirror at x=100 (x'=200−x).
+          Flipped nodes: (138,62)→(133,58)→(138,50)→(149,58)→(138,72)→(123,58)→(138,42)
+          Arm from (138,42) up to (100,25).
+        -->
+        <circle cx="138" cy="58" r="2.8" fill="#7b6fa0"/>
+        <path d="M 138 62
+                 C 136 62, 133 61, 133 58
+                 C 133 55, 134 50, 138 50
+                 C 142 50, 149 52, 149 58
+                 C 149 64, 146 72, 138 72
+                 C 130 72, 123 67, 123 58
+                 C 123 49, 130 42, 138 42
+                 C 138 32, 118 25, 100 25"
               stroke="#7b6fa0" stroke-width="1.5" stroke-linecap="round" fill="none"/>
       </svg>
       <p class="fork-label">
