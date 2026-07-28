@@ -534,9 +534,9 @@ h1 {
 
 /* Zoom in on the face and drop below the picture frame at the top */
 .path--day .path-photo {
-  object-position: 60% 58%;
-  transform: scale(1.68);
-  transform-origin: 60% 58%;
+  object-position: 67% 58%;
+  transform: scale(1.82);
+  transform-origin: 67% 58%;
 }
 
 .path--night .path-photo {
