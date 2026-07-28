@@ -448,7 +448,7 @@ h1 {
 
 .fork-visual svg {
   width: 200px;
-  height: 145px;
+  height: 172px;
 }
 
 .merge-visual svg {
@@ -509,24 +509,37 @@ h1 {
 }
 
 .path-photo-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
   margin-bottom: 1.25rem;
 }
 
 .path-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
 }
 
-.path--day .path-photo {
+.path--day .path-photo-wrap {
   border: 2px solid var(--rose-light);
-  object-position: center 40%;
+}
+
+.path--night .path-photo-wrap {
+  border: 2px solid rgba(197, 184, 232, 0.4);
+}
+
+/* Zoom in on the face and drop below the picture frame at the top */
+.path--day .path-photo {
+  object-position: 60% 52%;
+  transform: scale(1.5);
+  transform-origin: 60% 50%;
 }
 
 .path--night .path-photo {
-  border: 2px solid rgba(197, 184, 232, 0.4);
   filter: saturate(0.8) brightness(0.95);
 }
 
