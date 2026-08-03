@@ -648,28 +648,7 @@ h1 {
   color: var(--text-night-muted);
 }
 
-/* ——— Being in Systems section — atmospheric background ——— */
-
-#being {
-  position: relative;
-  overflow: hidden;
-}
-
-#being::before {
-  content: '';
-  position: absolute;
-  right: -2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 240px;
-  height: 240px;
-  background-image: url('being_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  opacity: 0.18;
-  pointer-events: none;
-}
+/* ——— Being in Systems section ——— */
 
 /* ——— Credentials ——— */
 
@@ -783,6 +762,51 @@ h1 {
   line-height: 1.78;
   margin-bottom: 2rem;
   max-width: 460px;
+}
+
+/* Inline notify form — Book section */
+.notify-form-inline {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.notify-form-inline input[type="email"] {
+  flex: 1 1 200px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.notify-form-inline input[type="email"]:focus {
+  border-color: var(--rose);
+}
+
+.notify-form-inline button {
+  padding: 0.65rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--rose);
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--rose);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.notify-form-inline button:hover {
+  background: var(--rose);
+  color: #fff;
 }
 
 /* ——— Contact ——— */
