@@ -884,6 +884,53 @@ h1 {
   transition: color 0.2s ease;
 }
 
+/* ——— Contact form ——— */
+
+.contact-form {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 520px;
+}
+
+.contact-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-form-row label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-form-row input,
+.contact-form-row textarea {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.contact-form-row input:focus,
+.contact-form-row textarea:focus {
+  border-color: var(--rose);
+}
+
+.contact-form .btn-primary {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+}
+
 /* ——— Footer ——— */
 
 footer {
