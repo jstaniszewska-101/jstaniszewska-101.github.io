@@ -753,7 +753,25 @@ h1 {
   font-size: 1rem;
   font-style: italic;
   color: var(--rose);
+  margin-bottom: 0.4rem;
+}
+
+.book-publisher {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
+}
+
+.book-publisher a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s ease;
+}
+
+.book-publisher a:hover {
+  color: var(--rose);
 }
 
 .book-desc {
