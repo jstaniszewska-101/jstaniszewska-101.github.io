@@ -723,8 +723,43 @@ h1 {
   width: 152px;
   height: 224px;
   object-fit: cover;
-  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.14);
+  display: block;
+  border-radius: 2px 4px 4px 2px;
 }
+
+/* 3D book mockup: tilt, spine shading, page edge, shadow */
+.book-3d {
+  position: relative;
+  width: 152px;
+  height: 224px;
+  transform: perspective(900px) rotateY(-16deg);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+  filter: drop-shadow(-10px 16px 22px rgba(0, 0, 0, 0.22));
+}
+
+.book-3d::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 11px;
+  border-radius: 2px 0 0 2px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.32), rgba(255,255,255,0.22) 45%, rgba(0,0,0,0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.book-3d::after {
+  content: "";
+  position: absolute;
+  top: 3px; bottom: 3px; right: -7px;
+  width: 8px;
+  border-radius: 0 2px 2px 0;
+  background: repeating-linear-gradient(90deg, #f4efe6 0, #f4efe6 1px, #dcd5c8 1px, #dcd5c8 2px);
+  z-index: -1;
+}
+
+a:hover .book-3d { transform: perspective(900px) rotateY(-8deg); }
 
 .badge-pill {
   display: inline-block;
